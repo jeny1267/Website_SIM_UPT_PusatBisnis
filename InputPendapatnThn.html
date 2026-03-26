@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIM UPT PUSAT BISNIS - Target Pendapatan</title>
+<link rel="stylesheet" href="InputPendapatnThn.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div class="header-logo"><img src="PB.png" alt="PB"></div>
+    <div class="header-title">SIM UPT PUSAT BISNIS Pemerintah Kota Yogyakarta</div>
+  </div>
+
+  <!-- NAVIGASI -->
+  <div class="nav">
+    <div class="nav-item active">
+      <a href="Dasboard.html">Home</a>
+    </div>
+    <div class="nav-item dropdown">
+      Sistem <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="User.html">User</a>
+        <a href="Group.html">Group</a>
+        <a href="Menu.html">Menu</a>
+        <a href="HakAkses.html">Hak Akses</a>
+        <a href="Password.html">Password</a>
+        <a href="Seting.html">Konfigurasi</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Master <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="DataLahan.html">Lahan</a>
+        <a href="LahanPend.html">Lahan Fasilitas Pend.</a>
+        <a href="BiayaListrik.html">Biaya Alat Listrik</a>
+        <a href="JenisLahan.html">Jenis Lahan</a>
+        <a href="JenisFasilitas.html">Jenis Fasilitas Pend.</a>
+        <a href="JenisDagangan.html">Jenis Dagangan</a>
+        <a href="JenisTarif.html">Jenis Tarif</a>
+        <a href="KelompokTarif.html">Kelompok Jenis Tarif</a>
+        <a href="UPT.html">UPT Pusat Bisnis</a>
+        <a href="ServiceCenter.html">Service center</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Tagihan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="TagihanMasal.html">Tagihan Masal</a>
+        <a href="PenguranganTarif.html">Pengurangan Tarif</a>
+        <a href="Invoice.html">Invoice</a>
+        <a href="InvoiceATM.html">Invoice ATM</a>
+        <a href="SaldoPlusMinus.html">Saldo Plus Minus</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Persewaan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="IdentitasPenyewa.html">Identitas Penyewaan</a>
+        <a href="PenetapanSewa.html">Penetapan Sewa</a>
+        <a href="PenetapanFasilitas.html">Penetapan Fasilitas Pend.</a>
+        <a href="Pelunasan.html">Pelunasan</a>
+        <a href="RegistrasiPengguna.html">Registrasi Pengguna</a>
+        <a href="InvoiceSewa.html">Invoice Sewa</a>
+        <a href="VerifikasiRegistrasiUser.html">Verifikasi Registrasi User</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Surat <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="SuratPeringatan.html">Surat Peringatan (SP)</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Laporan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="Realisasi.html">Realisasi</a>
+        <a href="RekapRealisasi.html">Rekap Realisasi</a>
+        <a href="TargetPendapatan.html">Input Pendapatan Tahunan</a>
+        <a href="InputPendapatanBulanan.html">Input Pendapatan Bulanan</a>
+        <a href="CekLpPendapatan.html">Cetak Lp. Pendapatan</a>
+      </div>
+    </div>
+    <div class="nav-user" id="userMenu">
+      JSSAD8958 <span class="arrow">▾</span>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="#">Help</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+  <div class="page-title">Target Pendapatan</div>
+  <hr class="page-divider">
+
+  <!-- Card -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Daftar Target Pendapatan</span>
+    </div>
+
+    <!-- Action Bar -->
+    <div class="action-bar">
+      <button class="btn btn-tambah" id="btnTambah">
+        <span>&#43;</span> Tambah Target Pendapatan
+      </button>
+      <button class="btn btn-edit" id="btnEdit">
+        <span>&#9998;</span> Edit Target Pendapatan
+      </button>
+    </div>
+
+    <!-- Table area (kosong default) -->
+    <div class="table-wrapper">
+      <table id="tableTarget">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Tahun</th>
+            <th>UPT Pusat Bisnis</th>
+            <th>Jenis Retribusi</th>
+            <th>Target</th>
+            <th>Keterangan</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+      </table>
+      <div class="empty-area" id="emptyArea"></div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination-bar">
+      <select id="perPage">
+        <option value="20">20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>2019. UPT Pusat Bisnis.</span>
+  <a href="#">Panduan Pengguna</a>
+</div>
+
+<!-- POPUP TAMBAH TARGET PENDAPATAN -->
+<div class="popup-overlay" id="popupTambah">
+  <div class="popup-box">
+    <div class="popup-title-bar">Tambah Target Pendapatan</div>
+    <div class="popup-inner">
+      <div class="popup-section-title">Data Target Pendapatan</div>
+      <div class="popup-form">
+        <div class="form-row">
+          <span class="form-label">Tahun</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputTahun" placeholder="Contoh: 2024" maxlength="4">
+        </div>
+        <div class="form-row">
+          <span class="form-label">UPT Pusat Bisnis</span>
+          <span class="form-colon">:</span>
+          <select class="form-select" id="inputUPT">
+            <option value="">-- Pilih UPT --</option>
+            <option>BERINGHARJO</option>
+            <option>KRIDOSONO</option>
+            <option>ARGOSARI</option>
+            <option>SEMUA UPT PUSAT BISNIS</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <span class="form-label">Jenis Retribusi</span>
+          <span class="form-colon">:</span>
+          <select class="form-select" id="inputJenisRetribusi">
+            <option value="">-- Pilih --</option>
+            <option>Lahan</option>
+            <option>Fasilitas Pendukung</option>
+            <option>Listrik</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <span class="form-label">Target</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputTarget" placeholder="0">
+        </div>
+        <div class="form-row">
+          <span class="form-label">Keterangan</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputKeterangan" placeholder="Keterangan...">
+        </div>
+      </div>
+    </div>
+    <div class="popup-footer">
+      <button class="btn-save" id="btnSave">
+        <span class="icon-save">✔</span> Save
+      </button>
+      <button class="btn-riset" id="btnRiset">
+        <span class="icon-riset">✖</span> Riset
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // User dropdown
+  const userMenu = document.getElementById("userMenu");
+  const dropdownMenu = document.getElementById("dropdownMenu");
+  userMenu.addEventListener("click", function (e) {
+    e.stopPropagation();
+    dropdownMenu.classList.toggle("show");
+  });
+  document.addEventListener("click", function () {
+    dropdownMenu.classList.remove("show");
+  });
+
+  // Row selection
+  function selectRow(row) {
+    document.querySelectorAll("#tableBody tr").forEach(r => r.classList.remove("selected"));
+    row.classList.add("selected");
+  }
+
+  // Show/hide empty area vs table
+  function refreshTableDisplay() {
+    const tbody = document.getElementById("tableBody");
+    const emptyArea = document.getElementById("emptyArea");
+    const table = document.getElementById("tableTarget");
+    if (tbody.querySelectorAll("tr").length > 0) {
+      table.style.display = "";
+      emptyArea.style.display = "none";
+    } else {
+      table.style.display = "none";
+      emptyArea.style.display = "";
+    }
+  }
+
+  // Popup Tambah
+  const popup = document.getElementById("popupTambah");
+  const fieldIds = ["inputTahun", "inputUPT", "inputJenisRetribusi", "inputTarget", "inputKeterangan"];
+
+  document.getElementById("btnTambah").addEventListener("click", function () {
+    // Reset form for new entry
+    fieldIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el.tagName === "SELECT") el.selectedIndex = 0;
+      else el.value = "";
+    });
+    popup.dataset.mode = "tambah";
+    popup.querySelector(".popup-title-bar").textContent = "Tambah Target Pendapatan";
+    popup.classList.add("active");
+  });
+
+  popup.addEventListener("click", function (e) {
+    if (e.target === popup) popup.classList.remove("active");
+  });
+
+  document.getElementById("btnRiset").addEventListener("click", function () {
+    fieldIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el.tagName === "SELECT") el.selectedIndex = 0;
+      else el.value = "";
+    });
+    popup.classList.remove("active");
+  });
+
+  document.getElementById("btnSave").addEventListener("click", function () {
+    const tahun  = document.getElementById("inputTahun").value.trim();
+    const upt    = document.getElementById("inputUPT").value;
+    const jenis  = document.getElementById("inputJenisRetribusi").value;
+    const target = document.getElementById("inputTarget").value.trim();
+    const ket    = document.getElementById("inputKeterangan").value.trim();
+
+    if (!tahun || !upt || !jenis) {
+      alert("Tahun, UPT, dan Jenis Retribusi wajib diisi!");
+      return;
+    }
+
+    const tbody = document.getElementById("tableBody");
+
+    if (popup.dataset.mode === "edit") {
+      const selected = document.querySelector("#tableBody tr.selected");
+      if (selected) {
+        selected.cells[1].innerText = tahun;
+        selected.cells[2].innerText = upt;
+        selected.cells[3].innerText = jenis;
+        selected.cells[4].innerText = target || "0";
+        selected.cells[5].innerText = ket;
+      }
+    } else {
+      const no = tbody.querySelectorAll("tr").length + 1;
+      const tr = document.createElement("tr");
+      tr.classList.add("selectable");
+      tr.setAttribute("onclick", "selectRow(this)");
+      tr.innerHTML = `
+        <td>${no}</td>
+        <td>${tahun}</td>
+        <td>${upt}</td>
+        <td>${jenis}</td>
+        <td>${target || "0"}</td>
+        <td>${ket}</td>
+      `;
+      tbody.appendChild(tr);
+    }
+
+    refreshTableDisplay();
+    alert("Data berhasil disimpan!");
+    popup.classList.remove("active");
+  });
+
+  // Edit
+  document.getElementById("btnEdit").addEventListener("click", function () {
+    const selected = document.querySelector("#tableBody tr.selected");
+    if (!selected) { alert("Pilih baris terlebih dahulu!"); return; }
+
+    document.getElementById("inputTahun").value            = selected.cells[1].innerText;
+    document.getElementById("inputUPT").value              = selected.cells[2].innerText;
+    document.getElementById("inputJenisRetribusi").value   = selected.cells[3].innerText;
+    document.getElementById("inputTarget").value           = selected.cells[4].innerText;
+    document.getElementById("inputKeterangan").value       = selected.cells[5].innerText;
+
+    popup.dataset.mode = "edit";
+    popup.querySelector(".popup-title-bar").textContent = "Edit Target Pendapatan";
+    popup.classList.add("active");
+  });
+
+  // Init
+  refreshTableDisplay();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIM UPT PUSAT BISNIS - Identitas Penyewa</title>
+<link rel="stylesheet" href="IdentitasPenyewa.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div class="header-logo"><img src="PB.png" alt="PB"></div>
+    <div class="header-title">SIM UPT PUSAT BISNIS Pemerintah Kota Yogyakarta</div>
+  </div>
+
+  <!-- NAVIGASI -->
+  <div class="nav">
+    <div class="nav-item active">
+      <a href="Dasboard.html">Home</a>
+    </div>
+    <div class="nav-item dropdown">
+      Sistem <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="User.html">User</a>
+        <a href="Group.html">Group</a>
+        <a href="Menu.html">Menu</a>
+        <a href="HakAkses.html">Hak Akses</a>
+        <a href="Password.html">Password</a>
+        <a href="Konfigurasi.html">Konfigurasi</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Master <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="DataLahan.html">Lahan</a>
+        <a href="LahanPend.html">Lahan Fasilitas Pend.</a>
+        <a href="BiayaListrik.html">Biaya Alat Listrik</a>
+        <a href="JenisLahan.html">Jenis Lahan</a>
+        <a href="JenisFasilitas.html">Jenis Fasilitas Pend.</a>
+        <a href="JenisDagangan.html">Jenis Dagangan</a>
+        <a href="JenisTarif.html">Jenis Tarif</a>
+        <a href="KelompokTarif.html">Kelompok Jenis Tarif</a>
+        <a href="UPT.html">UPT Pusat Bisnis</a>
+        <a href="ServiceCenter.html">Service center</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Tagihan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="TagihanMasal.html">Tagihan Masal</a>
+        <a href="PenguranganTarif.html">Pengurangan Tarif</a>
+        <a href="Invoice.html">Invoice</a>
+        <a href="InvoiceATM.html">Invoice ATM</a>
+        <a href="SaldoPlusMinus.html">Saldo Plus Minus</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Persewaan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="IdentitasPenyewa.html">Identitas Penyewaan</a>
+        <a href="PenetapanSewa.html">Penetapan Sewa</a>
+        <a href="PenetapanFasilitas.html">Penetapan Fasilitas Pend.</a>
+        <a href="Pelunasan.html">Pelunasan</a>
+        <a href="RegistrasiPengguna.html">Registrasi Pengguna</a>
+        <a href="InvoiceSewa.html">Invoice Sewa</a>
+        <a href="VerifikasiRegistrasiUser.html">Verifikasi Registrasi User</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Surat <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="SuratPeringatan.html">Surat Peringatan (SP)</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Laporan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="Realisasi.html">Realisasi</a>
+        <a href="RekapRealisasi.html">Rekap Realisasi</a>
+        <a href="TargetPendapatan.html">Input Pendapatan Tahunan</a>
+        <a href="InputPendapatanBulanan.html">Input Pendapatan Bulanan</a>
+        <a href="CekLpPendapatan.html">Cetak Lp. Pendapatan</a>
+      </div>
+    </div>
+    <div class="nav-user" id="userMenu">
+      JSSAD8958 <span class="arrow">▾</span>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="#">Help</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- Management Bar -->
+  <div class="management-bar">
+    <label class="mgmt-label">Managemen Identitas Penyewa</label>
+    <input type="text" id="inputSearch" placeholder="Search..." class="input-search">
+    <button class="btn-cari" id="btnCari">Cari</button>
+  </div>
+
+  <!-- Card -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Daftar Identitas</span>
+    </div>
+
+    <!-- Action Bar -->
+    <div class="action-bar">
+      <button class="btn btn-tambah" id="btnTambah">
+        <span>&#43;</span> Tambah Penyewa
+      </button>
+      <button class="btn btn-edit" id="btnEdit">
+        <span>&#9998;</span> Edit Penyewa
+      </button>
+      <button class="btn btn-hapus" id="btnHapus">
+        <span>&#128465;</span> Hapus Penyewa
+      </button>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrapper">
+      <table id="tablePenyewa">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>No KTP</th>
+            <th>Nama Penyewa</th>
+            <th>Alamat KTP</th>
+            <th>Alamat Domisili</th>
+            <th>No. Telpon</th>
+            <th>No. Handphone</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>1</td>
+            <td>3471103103670001</td>
+            <td>A. Munadlirin</td>
+            <td>Ratmakan GM I/673 RT 027 RW 008 Ngupasan Gondomanan Yogyakarta</td>
+            <td></td>
+            <td></td>
+            <td>081328880448</td>
+          </tr>
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>2</td>
+            <td>3275052203790012</td>
+            <td>Ady Prastiawan</td>
+            <td>Surya Permata Indah Blk A2/10 RT 005 RW 003 Sepanjang Jaya Rawalumbu Bekasi</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>3</td>
+            <td>3402151211760004</td>
+            <td>Ahmad Elfahmi</td>
+            <td>Cabeyan RT 006 Panggungharjo Sewon Bantul</td>
+            <td></td>
+            <td></td>
+            <td>082226226929</td>
+          </tr>
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>4</td>
+            <td>3471046609760002</td>
+            <td>Aidil Fitri</td>
+            <td>Tegalkemuning DN. II/795, 045/010 Tegalpanggung Danurejan Yogyakarta</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>5</td>
+            <td>3404026410730002</td>
+            <td>Fitriani</td>
+            <td>Jl. Pramuka No.27 Candran RT 009 RW 011 Sidoarum Godean Sleman</td>
+            <td></td>
+            <td></td>
+            <td>085228017840</td>
+          </tr>
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>6</td>
+            <td>3471130204660001</td>
+            <td>Al Haris, SE</td>
+            <td>Jl. Pakel Baru Selatan 958C RT 023 RW 007 Sorosutan Umbulharjo Yogyakarta</td>
+            <td></td>
+            <td></td>
+            <td>085292424242</td>
+          </tr>
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>7</td>
+            <td>3471130802810001</td>
+            <td>Yudi Aditia</td>
+            <td>Celeban Timur UH 3/588 RT 020 RW 005 Tahunan Umbulharjo Yogyakarta</td>
+            <td></td>
+            <td></td>
+            <td>082133947779</td>
+          </tr>
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>8</td>
+            <td>3471033103750001</td>
+            <td>Mufti, S.Ag</td>
+            <td>Sapen GK I/530 RT 023 RW 007 Demangan Gondokusuman Yogyakarta</td>
+            <td></td>
+            <td>0817133880</td>
+            <td></td>
+          </tr>
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>9</td>
+            <td>3471092506750001</td>
+            <td>Asrial</td>
+            <td>Namburan Kidul No.25 RT 014 RW 005 Panembahan Kraton Yogyakarta</td>
+            <td></td>
+            <td></td>
+            <td>081215152223</td>
+          </tr>
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>10</td>
+            <td>3471144901530001</td>
+            <td>Sartje Sumampouw</td>
+            <td>Jl. Pandeyan No.37 RT 018 RW 004 Pandeyan Umbulharjo Yogyakarta</td>
+            <td></td>
+            <td></td>
+            <td>081328027770</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination-bar">
+      <select id="perPage">
+        <option value="20">20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>2019. UPT Pusat Bisnis.</span>
+  <a href="#">Panduan Pengguna</a>
+</div>
+
+<!-- POPUP TAMBAH / EDIT PENYEWA -->
+<div class="popup-overlay" id="popupPenyewa">
+  <div class="popup-box">
+    <div class="popup-title-bar" id="popupTitle">Tambah Penyewa</div>
+    <div class="popup-inner">
+      <div class="popup-section-title">Data Identitas Penyewa</div>
+      <div class="popup-form">
+        <div class="form-row">
+          <span class="form-label">No KTP</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputNoKTP" placeholder="No KTP...">
+        </div>
+        <div class="form-row">
+          <span class="form-label">Nama Penyewa</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputNama" placeholder="Nama lengkap...">
+        </div>
+        <div class="form-row">
+          <span class="form-label">Alamat KTP</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputAlamatKTP" placeholder="Alamat sesuai KTP...">
+        </div>
+        <div class="form-row">
+          <span class="form-label">Alamat Domisili</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputAlamatDomisili" placeholder="Alamat domisili...">
+        </div>
+        <div class="form-row">
+          <span class="form-label">No. Telpon</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputTelpon" placeholder="No. Telpon...">
+        </div>
+        <div class="form-row">
+          <span class="form-label">No. Handphone</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputHP" placeholder="No. Handphone...">
+        </div>
+      </div>
+    </div>
+    <div class="popup-footer">
+      <button class="btn-save" id="btnSave">
+        <span class="icon-save">✔</span> Save
+      </button>
+      <button class="btn-riset" id="btnRiset">
+        <span class="icon-riset">✖</span> Riset
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // User dropdown
+  const userMenu = document.getElementById("userMenu");
+  const dropdownMenu = document.getElementById("dropdownMenu");
+  userMenu.addEventListener("click", function(e) {
+    e.stopPropagation();
+    dropdownMenu.classList.toggle("show");
+  });
+  document.addEventListener("click", function() {
+    dropdownMenu.classList.remove("show");
+  });
+
+  // Row selection
+  function selectRow(row) {
+    document.querySelectorAll("#tableBody tr").forEach(r => r.classList.remove("selected"));
+    row.classList.add("selected");
+  }
+
+  // Search / Cari
+  document.getElementById("btnCari").addEventListener("click", function() {
+    const keyword = document.getElementById("inputSearch").value.toLowerCase();
+    document.querySelectorAll("#tableBody tr").forEach(function(row) {
+      const nama = row.cells[2].innerText.toLowerCase();
+      const ktp  = row.cells[1].innerText.toLowerCase();
+      row.style.display = (!keyword || nama.includes(keyword) || ktp.includes(keyword)) ? "" : "none";
+    });
+  });
+
+  document.getElementById("inputSearch").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") document.getElementById("btnCari").click();
+  });
+
+  // Popup references
+  const popup     = document.getElementById("popupPenyewa");
+  const fieldIds  = ["inputNoKTP","inputNama","inputAlamatKTP","inputAlamatDomisili","inputTelpon","inputHP"];
+
+  function clearForm() {
+    fieldIds.forEach(id => document.getElementById(id).value = "");
+  }
+
+  // Tambah
+  document.getElementById("btnTambah").addEventListener("click", function() {
+    clearForm();
+    popup.dataset.mode = "tambah";
+    document.getElementById("popupTitle").textContent = "Tambah Penyewa";
+    popup.classList.add("active");
+  });
+
+  // Edit
+  document.getElementById("btnEdit").addEventListener("click", function() {
+    const selected = document.querySelector("#tableBody tr.selected");
+    if (!selected) { alert("Pilih baris terlebih dahulu!"); return; }
+    document.getElementById("inputNoKTP").value         = selected.cells[1].innerText;
+    document.getElementById("inputNama").value          = selected.cells[2].innerText;
+    document.getElementById("inputAlamatKTP").value     = selected.cells[3].innerText;
+    document.getElementById("inputAlamatDomisili").value= selected.cells[4].innerText;
+    document.getElementById("inputTelpon").value        = selected.cells[5].innerText;
+    document.getElementById("inputHP").value            = selected.cells[6].innerText;
+    popup.dataset.mode = "edit";
+    document.getElementById("popupTitle").textContent = "Edit Penyewa";
+    popup.classList.add("active");
+  });
+
+  // Hapus
+  document.getElementById("btnHapus").addEventListener("click", function() {
+    const selected = document.querySelector("#tableBody tr.selected");
+    if (!selected) { alert("Pilih baris yang akan dihapus!"); return; }
+    if (confirm("Hapus data penyewa ini?")) {
+      selected.remove();
+      document.querySelectorAll("#tableBody tr").forEach((r, i) => r.cells[0].innerText = i + 1);
+    }
+  });
+
+  // Close popup
+  popup.addEventListener("click", function(e) {
+    if (e.target === popup) popup.classList.remove("active");
+  });
+
+  // Riset
+  document.getElementById("btnRiset").addEventListener("click", function() {
+    clearForm();
+    popup.classList.remove("active");
+  });
+
+  // Save
+  document.getElementById("btnSave").addEventListener("click", function() {
+    const ktp  = document.getElementById("inputNoKTP").value.trim();
+    const nama = document.getElementById("inputNama").value.trim();
+    if (!ktp || !nama) { alert("No KTP dan Nama Penyewa wajib diisi!"); return; }
+
+    const tbody = document.getElementById("tableBody");
+
+    if (popup.dataset.mode === "edit") {
+      const selected = document.querySelector("#tableBody tr.selected");
+      if (selected) {
+        selected.cells[1].innerText = ktp;
+        selected.cells[2].innerText = nama;
+        selected.cells[3].innerText = document.getElementById("inputAlamatKTP").value;
+        selected.cells[4].innerText = document.getElementById("inputAlamatDomisili").value;
+        selected.cells[5].innerText = document.getElementById("inputTelpon").value;
+        selected.cells[6].innerText = document.getElementById("inputHP").value;
+      }
+    } else {
+      const no = tbody.querySelectorAll("tr").length + 1;
+      const tr = document.createElement("tr");
+      tr.classList.add("selectable");
+      tr.setAttribute("onclick", "selectRow(this)");
+      tr.innerHTML = `
+        <td>${no}</td>
+        <td>${ktp}</td>
+        <td>${nama}</td>
+        <td>${document.getElementById("inputAlamatKTP").value}</td>
+        <td>${document.getElementById("inputAlamatDomisili").value}</td>
+        <td>${document.getElementById("inputTelpon").value}</td>
+        <td>${document.getElementById("inputHP").value}</td>
+      `;
+      tbody.appendChild(tr);
+    }
+
+    alert("Data penyewa berhasil disimpan!");
+    popup.classList.remove("active");
+  });
+</script>
+
+</body>
+</html>

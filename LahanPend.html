@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIM UPT PUSAT BISNIS - Data Lahan</title>
+<link rel="stylesheet" href="LahanPend.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div class="header-logo"><img src="PB.png" alt="PB"></div>
+    <div class="header-title">SIM UPT PUSAT BISNIS Pemerintah Kota Yogyakarta</div>
+  </div>
+
+  <!-- NAVIGASI -->
+  <div class="nav">
+    <div class="nav-item active">
+      <a href="Dasboard.html">Home</a>
+    </div>
+    <div class="nav-item dropdown">
+      Sistem <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="User.html">User</a>
+        <a href="Group.html">Group</a>
+        <a href="Menu.html">Menu</a>
+        <a href="HakAkses.html">Hak Akses</a>
+        <a href="Password.html">Password</a>
+        <a href="Seting.html">Konfigurasi</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Master <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="Lahan.html">Lahan</a>
+        <a href="LahanPend.html">Lahan Fasilitas Pend.</a>
+        <a href="Biaya.html">Biaya Alat Listrik</a>
+        <a href="JenisLahan.html">Jenis Lahan</a>
+        <a href="JenisFasilitas.html">Jenis Fasilitas Pend.</a>
+        <a href="JenisDagangan.html">Jenis Dagangan</a>
+        <a href="JenisTarif.html">Jenis Tarif</a>
+        <a href="KelompokTarif.html">Kelompok Jenis Tarif</a>
+        <a href="UPT.html">UPT Pusat Bisnis</a>
+        <a href="ServiceCenter.html">Service center</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Tagihan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="TagihanMasal.html">Tagihan Masal</a>
+        <a href="PenguranganTarif.html">Pengurangan Tarif</a>
+        <a href="Invoice.html">Invoice</a>
+        <a href="InvoiceATM.html">Invoice ATM</a>
+        <a href="SaldoPlusMinus.html">Saldo Plus Minus</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Persewaan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="IdentitasPenyewa.html">Identitas Penyewaan</a>
+        <a href="PenetapanSewa.html">Penetapan Sewa</a>
+        <a href="PenetapanFasilitas.html">Penetapan Fasilitas Pend.</a>
+        <a href="Pelunasan.html">Pelunasan</a>
+        <a href="RegistrasiPengguna.html">Registrasi Pengguna</a>
+        <a href="InvoiceSewa.html">Invoice Sewa</a>
+        <a href="VerifikasiRegistrasiUser.html">Verifikasi Registrasi User</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Surat <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="SuratPeringatan.html">Surat Peringatan (SP)</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Laporan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="Realisasi.html">Realisasi</a>
+        <a href="RekapRealisasi.html">Rekap Realisasi</a>
+        <a href="TargetPendapatan.html">Input Pendapatan Tahunan</a>
+        <a href="InputPendapatanBulanan.html">Input Pendapatan Bulanan</a>
+        <a href="CekLpPendapatan.html">Cetak Lp. Pendapatan</a>
+      </div>
+    </div>
+    <div class="nav-user" id="userMenu">
+      JSSAD8958 <span class="arrow">▾</span>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="#">Help</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+  <div class="page-title">Data Lahan Pemanfaatan Fasilitas Pendukung</div>
+  <hr class="page-divider">
+
+  <!-- Filter Bar -->
+  <div class="filter-section">
+    <div class="filter-left">
+      <input type="text" id="inputKodeLokasi" placeholder="Kode Lokasi...">
+      <input type="text" id="inputNoInduk" placeholder="No Induk Lahan...">
+      <div class="filter-buttons">
+        <button class="btn btn-cari" onclick="cariData()">Cari</button>
+      </div>
+    </div>
+    <div class="filter-right">
+      <div class="select-wrapper">
+        <select id="selectUPT">
+          <option value="">SEMUA UPT PUSAT BISNIS</option>
+          <option value="beringharjo">BRJ | BERINGHARJO</option>
+          <option value="kridosono">PWT | PRAWIROTAMAN</option>
+        </select>
+        <span class="select-icon">▾</span>
+      </div>
+      <div class="select-wrapper">
+        <select id="selectJenisLahan">
+          <option value="">-- Semua Jenis Lahan --</option>
+          <option value="kios">1. Kios</option>
+          <option value="konter">2. Konter</option>
+          <option value="insidental">3. Insidental</option>
+          <option value="kantin">4. Kantin/Foodcourt</option>
+          <option value="ruang_kerja">5. Ruang Kerja Private</option>
+        </select>
+        <span class="select-icon">▴</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Data Lahan</span>
+    </div>
+
+    <!-- Action Bar -->
+    <div class="action-bar">
+      <button class="btn btn-tambah" id="btnTambahLahan">
+        <span>&#43;</span> Tambah Lahan
+      </button>
+      <button class="btn btn-edit" id="btnEditLahan">
+        <span>&#9998;</span> Edit Lahan
+      </button>
+      <button class="btn btn-hapus" id="btnHapusLahan">
+        <span>&#128465;</span> Hapus Lahan
+      </button>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrapper">
+      <table id="tableLahan">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>UPT Pusat Bisnis</th>
+            <th>Jenis Lahan</th>
+            <th>Lantai</th>
+            <th>Blok</th>
+            <th>Kode Lokasi</th>
+            <th>Daya Listrik</th>
+            <th>Luas</th>
+            <th>Service Charge/ M2</th>
+            <th>Service Charge Perbulan</th>
+            <th>Tarif Sewa Pertahun</th>
+            <th>Tarif Sewa Perbulan</th>
+            <th>Biaya Alat Listrik</th>
+            <th>Status</th>
+            <th>Gol.Dagangan</th>
+            <th>Jenis Dagangan</th>
+            <th>Nilai Strategis</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>1</td>
+            <td>BERINGHARJO</td>
+            <td>Kios</td>
+            <td>Lantai II</td>
+            <td>B2-U</td>
+            <td>D-14</td>
+            <td></td>
+            <td>10.4</td>
+            <td>0</td>
+            <td>0</td>
+            <td>16,720,000</td>
+            <td>1,394,000</td>
+            <td>0</td>
+            <td>Aktif</td>
+            <td>Fashion</td>
+            <td>Pakaian dewasa/anak</td>
+            <td>Kios 1</td>
+          </tr>
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>2</td>
+            <td>BERINGHARJO</td>
+            <td>Konter</td>
+            <td>Lantai III</td>
+            <td>Atrium Outlet ATM</td>
+            <td>39</td>
+            <td></td>
+            <td>3.52</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1,101,000</td>
+            <td>0</td>
+            <td>Aktif</td>
+            <td>Perkantoran</td>
+            <td>Perbankan</td>
+            <td>Kios 1</td>
+          </tr>
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>3</td>
+            <td>BERINGHARJO</td>
+            <td>Konter</td>
+            <td>Lantai III</td>
+            <td>Atrium 2</td>
+            <td>38</td>
+            <td></td>
+            <td>4</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>620,000</td>
+            <td>0</td>
+            <td>Aktif</td>
+            <td>Aksesoris</td>
+            <td>dan yang dipersembahkan</td>
+            <td>Konter 1</td>
+          </tr>
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>4</td>
+            <td>BERINGHARJO</td>
+            <td>Konter</td>
+            <td>Lantai III</td>
+            <td>Atrium 2</td>
+            <td>38</td>
+            <td></td>
+            <td>4</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>580,000</td>
+            <td>0</td>
+            <td>Aktif</td>
+            <td>Aksesoris</td>
+            <td>dan yang dipersembahkan</td>
+            <td>Konter 1</td>
+          </tr>
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>5</td>
+            <td>BERINGHARJO</td>
+            <td>Konter</td>
+            <td>Lantai III</td>
+            <td>Atrium 2</td>
+            <td>38</td>
+            <td></td>
+            <td>4</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>809,000</td>
+            <td>0</td>
+            <td>Aktif</td>
+            <td>Aksesoris</td>
+            <td>dan yang dipersembahkan</td>
+            <td>Konter 1</td>
+          </tr>
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>6</td>
+            <td>BERINGHARJO</td>
+            <td>Konter</td>
+            <td>Lantai III</td>
+            <td>Atrium 2</td>
+            <td>38</td>
+            <td></td>
+            <td>4</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>620,000</td>
+            <td>0</td>
+            <td>Aktif</td>
+            <td>Aksesoris</td>
+            <td>dan yang dipersembahkan</td>
+            <td>Konter 1</td>
+          </tr>
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>6</td>
+            <td>BERINGHARJO</td>
+            <td>Konter</td>
+            <td>Lantai III</td>
+            <td>Atrium 2</td>
+            <td>38</td>
+            <td></td>
+            <td>4</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>620,000</td>
+            <td>0</td>
+            <td>Aktif</td>
+            <td>Aksesoris</td>
+            <td>dan yang dipersembahkan</td>
+            <td>Konter 1</td>
+          </tr>
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>8</td>
+            <td>BERINGHARJO</td>
+            <td>Konter</td>
+            <td>Lantai III</td>
+            <td>Atrium 2</td>
+            <td>38</td>
+            <td></td>
+            <td>4</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>620,000</td>
+            <td>0</td>
+            <td>Aktif</td>
+            <td>Aksesoris</td>
+            <td>dan yang dipersembahkan</td>
+            <td>Konter 1</td>
+          </tr>
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>9</td>
+            <td>BERINGHARJO</td>
+            <td>Konter</td>
+            <td>Lantai III</td>
+            <td>Atrium 2</td>
+            <td>38</td>
+            <td></td>
+            <td>4</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>620,000</td>
+            <td>0</td>
+            <td>Aktif</td>
+            <td>Aksesoris</td>
+            <td>dan yang dipersembahkan</td>
+            <td>Konter 1</td>
+          </tr>
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>10</td>
+            <td>BERINGHARJO</td>
+            <td>Konter</td>
+            <td>Lantai III</td>
+            <td>Atrium 2</td>
+            <td>38</td>
+            <td></td>
+            <td>4</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>620,000</td>
+            <td>0</td>
+            <td>Aktif</td>
+            <td>Aksesoris</td>
+            <td>dan yang dipersembahkan</td>
+            <td>Konter 1</td>
+          </tr>
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>11</td>
+            <td>BERINGHARJO</td>
+            <td>Konter</td>
+            <td>Lantai III</td>
+            <td>Atrium 2</td>
+            <td>38</td>
+            <td></td>
+            <td>4</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>620,000</td>
+            <td>0</td>
+            <td>Aktif</td>
+            <td>Aksesoris</td>
+            <td>dan yang dipersembahkan</td>
+            <td>Konter 1</td>
+          </tr>
+          <tr class="selectable" onclick="selectRow(this)">
+            <td>12</td>
+            <td>BERINGHARJO</td>
+            <td>Konter</td>
+            <td>Lantai III</td>
+            <td>Atrium 2</td>
+            <td>38</td>
+            <td></td>
+            <td>4</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>620,000</td>
+            <td>0</td>
+            <td>Aktif</td>
+            <td>Aksesoris</td>
+            <td>dan yang dipersembahkan</td>
+            <td>Konter 1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination-bar">
+      <select id="perPage">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>2019. UPT Pusat Bisnis.</span>
+  <a href="#">Panduan Pengguna</a>
+</div>
+
+<!-- POPUP TAMBAH LAHAN -->
+<div class="popup-overlay" id="popupTambahLahan">
+  <div class="popup-box">
+    <div class="popup-title-bar">Tambah Lahan</div>
+    <div class="popup-inner">
+      <div class="popup-section-title">Data Lahan</div>
+      <div class="popup-form">
+        <div class="form-row">
+          <span class="form-label">UPT Pusat Bisnis</span>
+          <span class="form-colon">:</span>
+          <select class="form-select" id="inputUPT">
+            <option value="">-- Pilih UPT --</option>
+            <option>BRJ | BERINGHARJO</option>
+            <option>PWT | PRAWIROTAMAN</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <span class="form-label">Lantai</span>
+          <span class="form-colon">:</span>
+          <select class="form-select" id="inputUPT">
+            <option value="">-- Lantai --</option>
+            <option>Lantai I</option>
+            <option>Lantai II</option>
+            <option>Lantai III</option>
+            <option>Lantai VI</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <span class="form-label">Blok</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputBlok" placeholder="Blok...">
+        </div>
+        <div class="form-row">
+          <span class="form-label">Kode Lokasi</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputKodeLokasi2" placeholder="Kode Lokasi...">
+        </div>
+        <div class="form-row">
+          <span class="form-label">Jenis Lahan</span>
+          <span class="form-colon">:</span>
+          <select class="form-select" id="inputJenisLahan">
+            <option value="">-- Pilih Jenis --</option>
+            <option>Kios</option>
+            <option>Konter</option>
+            <option>Insidental</option>
+            <option>Kantin/Foodcourt</option>
+            <option>Ruang Kerja Private</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <span class="form-label">Nilai Strategi</span>
+          <span class="form-colon">:</span>
+          <select class="form-select" id="inputJenisLahan">
+            <option value="">-- Nilai Strategi --</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <span class="form-label">Golongan Dagangan</span>
+          <span class="form-colon">:</span>
+          <select class="form-select" id="inputJenisLahan">
+            <option value="">-- Golongan Dagangan --</option>
+            <option>Fashion</option>
+            <option>Aksesoris</option>
+            <option>Kosmetik dan obat-obatan</option>
+            <option>Aneka makanan dan minuman</option>
+            <option>Perkantoran</option>
+            <option>Jasa Usaha Kecil</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <span class="form-label">Pemakaian Listrik</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputDayaListrik" placeholder="Daya Listrik...">
+        </div>
+        <div class="form-row">
+          <span class="form-label">Luas</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputLuas" placeholder="Luas (m²)...">
+        </div>
+        <div class="form-row">
+          <span class="form-label">Service Charge/M2</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputSCM2" placeholder="0">
+        </div>
+        <div class="form-row">
+          <span class="form-label">Tarif</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputSCBulan" placeholder="0">
+        </div>
+        <div class="form-row">
+          <span class="form-label">Aktif</span>
+          <span class="form-colon">:</span>
+          <select class="form-select" id="inputJenisLahan">
+            <option value=""></option>
+            <option>Aktif</option>
+            <option>Tidak Aktif</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="popup-footer">
+      <button class="btn-save" id="btnSaveLahan">
+        <span class="icon-save">✔</span> Save
+      </button>
+      <button class="btn-riset" id="btnRisetLahan">
+        <span class="icon-riset">✖</span> Cancel
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // User dropdown
+  const userMenu = document.getElementById("userMenu");
+  const dropdownMenu = document.getElementById("dropdownMenu");
+  userMenu.addEventListener("click", function (e) {
+    e.stopPropagation();
+    dropdownMenu.classList.toggle("show");
+  });
+  document.addEventListener("click", function () {
+    dropdownMenu.classList.remove("show");
+  });
+
+  // Row selection
+  function selectRow(row) {
+    document.querySelectorAll("#tableBody tr").forEach(r => r.classList.remove("selected"));
+    row.classList.add("selected");
+  }
+
+  // Popup Tambah Lahan
+  const popupTambahLahan = document.getElementById("popupTambahLahan");
+
+  document.getElementById("btnTambahLahan").addEventListener("click", function () {
+    popupTambahLahan.classList.add("active");
+  });
+
+  popupTambahLahan.addEventListener("click", function (e) {
+    if (e.target === popupTambahLahan) popupTambahLahan.classList.remove("active");
+  });
+
+  document.getElementById("btnRisetLahan").addEventListener("click", function () {
+    ["inputUPT","inputJenisLahan","inputLantai","inputBlok",
+     "inputKodeLokasi2","inputDayaListrik","inputLuas","inputSCM2","inputSCBulan"]
+      .forEach(id => {
+        const el = document.getElementById(id);
+        if (el.tagName === "SELECT") el.selectedIndex = 0;
+        else el.value = "";
+      });
+    popupTambahLahan.classList.remove("active");
+  });
+
+  document.getElementById("btnSaveLahan").addEventListener("click", function () {
+    const upt = document.getElementById("inputUPT").value;
+    const jenis = document.getElementById("inputJenisLahan").value;
+    if (!upt || !jenis) { alert("UPT dan Jenis Lahan wajib diisi!"); return; }
+    const tbody = document.getElementById("tableBody");
+    const no = tbody.querySelectorAll("tr").length + 1;
+    const tr = document.createElement("tr");
+    tr.classList.add("selectable");
+    tr.setAttribute("onclick", "selectRow(this)");
+    tr.innerHTML = `
+      <td>${no}</td>
+      <td>${upt}</td>
+      <td>${jenis}</td>
+      <td>${document.getElementById("inputLantai").value}</td>
+      <td>${document.getElementById("inputBlok").value}</td>
+      <td>${document.getElementById("inputKodeLokasi2").value}</td>
+      <td>${document.getElementById("inputDayaListrik").value}</td>
+      <td>${document.getElementById("inputLuas").value}</td>
+      <td>${document.getElementById("inputSCM2").value || 0}</td>
+      <td>${document.getElementById("inputSCBulan").value || 0}</td>
+    `;
+    tbody.appendChild(tr);
+    alert("Data lahan berhasil disimpan!");
+    popupTambahLahan.classList.remove("active");
+  });
+
+  // Edit Lahan
+  document.getElementById("btnEditLahan").addEventListener("click", function () {
+    const selected = document.querySelector("#tableBody tr.selected");
+    if (!selected) { alert("Pilih baris terlebih dahulu!"); return; }
+    alert("Edit lahan: " + selected.cells[4].innerText);
+  });
+
+  // Hapus Lahan
+  document.getElementById("btnHapusLahan").addEventListener("click", function () {
+    const selected = document.querySelector("#tableBody tr.selected");
+    if (!selected) { alert("Pilih baris yang akan dihapus!"); return; }
+    if (confirm("Hapus data lahan ini?")) {
+      selected.remove();
+      document.querySelectorAll("#tableBody tr").forEach((r, i) => {
+        r.cells[0].innerText = i + 1;
+      });
+    }
+  });
+
+  // Cari
+  function cariData() {
+    const kode = document.getElementById("inputKodeLokasi").value.toLowerCase();
+    const noInduk = document.getElementById("inputNoInduk").value.toLowerCase();
+    document.querySelectorAll("#tableBody tr").forEach(function (row) {
+      const kodeLokasi = row.cells[5].innerText.toLowerCase();
+      const match = (!kode || kodeLokasi.includes(kode)) &&
+                    (!noInduk || kodeLokasi.includes(noInduk));
+      row.style.display = match ? "" : "none";
+    });
+  }
+
+  // Filter by Jenis Lahan dropdown
+  document.getElementById("selectJenisLahan").addEventListener("change", function () {
+    const val = this.value;
+    document.querySelectorAll("#tableBody tr").forEach(function (row) {
+      const jenis = row.cells[2].innerText.toLowerCase();
+      row.style.display = (!val || jenis.toLowerCase().includes(val.replace("_", " "))) ? "" : "none";
+    });
+  });
+
+  // ===== Pagination (Limit Rows) =====
+const perPageSelect = document.getElementById("perPage");
+
+function updateTableLimit() {
+  const limit = parseInt(perPageSelect.value);
+  const rows = document.querySelectorAll("#tableBody tr");
+
+  rows.forEach((row, index) => {
+    row.style.display = index < limit ? "" : "none";
+  });
+}
+
+// Jalankan saat dropdown berubah
+perPageSelect.addEventListener("change", updateTableLimit);
+
+// Jalankan pertama kali saat halaman load
+updateTableLimit();
+</script>
+
+</body>
+</html>

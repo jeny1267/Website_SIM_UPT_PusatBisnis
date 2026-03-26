@@ -1,0 +1,365 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Arial';
+  background: #ffffff;
+  min-width: 1200px;
+  padding-top: 110px;
+}
+  
+/*HEADER*/  
+.header {
+  background: linear-gradient(to right, #cc0000, #dd0000);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+.header-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}  
+.header-logo img {
+  width: 300%;
+  height: 100%;
+}
+.header-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px 10px 20px;
+}  
+.header-title {
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  font-family: Arial;
+  text-shadow: #000 2px 2px 4px;
+}
+.header-title span {
+  font-size: 36px;
+}
+
+/*Dropdown Sistem*/
+.nav-item.dropdown {
+  position: relative;
+}
+.dropdown-sistem {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #e5e5e5;
+  min-width: 200px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: none;
+  flex-direction: column;
+  z-index: 999;
+}
+.dropdown-sistem a {
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  border-bottom: 1px solid #d0d0d0;
+}
+.dropdown-sistem a:hover {
+  background: #d6d6d6;
+}
+.dropdown-sistem a:last-child {
+  border-bottom: none;
+}
+
+/* Tampilkan saat hover */
+.nav-item.dropdown:hover .dropdown-sistem {
+  display: flex;
+}
+  
+/*NAVIGATION*/
+.nav {
+  background: linear-gradient(180deg,rgba(255,220,43,0.9) 0%,rgba(255,136,0,0.9) 100%);
+  border: 2px solid rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  height: 40px;
+  gap: 4px;
+  margin-top: -15px;
+}  
+.nav-item {
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #222;
+  cursor: pointer;
+  border-radius: 4px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}  
+.nav-item:hover {
+  background: rgba(0,0,0,0.1);
+} 
+.nav-item.active {
+  background: rgba(255,255,255,0.5);
+  border: 1px solid rgba(0,0,0,0.2);
+}  
+.nav-item .arrow {
+  font-size: 10px;
+}  
+.nav-spacer {
+  flex: 1;
+}  
+.nav-user {
+  position: relative;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-user:hover {
+  color: #1a6ed4;
+  background: #f5f9ff;
+  border-color: #1a6ed4;
+}  
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #f2f2f2;
+  min-width: 140px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  border-radius: 4px;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+}
+.dropdown-menu a {
+  padding: 10px 14px;
+  text-decoration: none;
+  color: #333;
+  font-weight: normal;
+  border-bottom: 1px solid #ddd;
+}  
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+.dropdown-menu a:hover {
+  background: #e0e0e0;
+}
+  
+/* Class aktif */
+.dropdown-menu.show {
+  display: flex;
+} 
+
+/* Main content */
+.content {
+  padding: 16px 20px;
+}
+
+/* Managemen User bar */
+.management-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.management-bar label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #222;
+}
+.management-bar input[type="text"] {
+  flex: 1;
+  max-width: 380px;
+  padding: 6px 10px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+/* BUTTON CARI */
+.btn-cari {
+  background: #2196F3;
+  color: #fff;
+  border: none;
+  padding: 6px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+}
+.btn-cari:hover {
+  background: #1976D2;
+}
+
+/* BUTTON ADVANCE */
+.btn-advance {
+  background: #2196F3;
+  color: #fff;
+  border: none;
+  padding: 6px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+}
+.btn-advance:hover {
+  background: #1976D2;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  border: 1px solid #cce0ff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.card-header {
+  background: linear-gradient(to bottom, #e8f4ff, #d0e8ff);
+  padding: 10px 16px;
+  border-bottom: 1px solid #cce0ff;
+}
+.card-header h2 {
+  color: #1565C0;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* Action buttons */
+.action-bar {
+  padding: 10px 16px;
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid #eee;
+}
+.btn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.btn-tambah {
+  background: #4CAF50; 
+  color: #fff; 
+}
+.btn-tambah:hover {
+  background: #388E3C;
+}
+.btn-simpan {
+  background: #fff;
+  color: #333;
+  border: 1px solid #bbb; 
+}
+.btn-simpan:hover {
+  background: #b3c7ff;
+}
+.btn-hapus {
+  background: #ee1616;
+  color: #f7f7f7;
+  border: 1px solid #bbb; 
+}
+.btn-batal:hover {
+  background: #f6c1c1;
+}
+.btn-batal {
+  background: #cacaca;
+  color: #fff;
+}
+.btn-hapus:hover {
+  background: #cacaca;
+}
+
+/* Table */
+.table-wrapper {
+  overflow-x: auto;
+  margin: 10px;
+}
+.table-wrapper th{
+  text-align: center; 
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table th, td{
+  border: 1px solid #d3d3d3;
+}
+table thead tr {
+  background: #e8e8e8;
+}
+table thead th {
+  padding: 9px 12px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 13px;
+  color: #333;
+  border-bottom: 1px solid #d3d3d3;
+}
+table tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+table tbody tr:hover {
+  background: #e3f2fd;
+}
+table tbody td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #d3d3d3;
+  color: #333;
+  font-size: 13px;
+}
+
+/* Pagination */
+.pagination-bar {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.pagination-bar select {
+  padding: 3px 6px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+/*FOOTER*/
+.footer {
+  background: linear-gradient(to top, #1a1a1a 50%, white);
+  color: white;
+  padding: 25px 10px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  font-size: 12px;
+}  
+.footer a {
+  color: #ff9800;
+  text-decoration: none;
+  margin-left:500px;
+}

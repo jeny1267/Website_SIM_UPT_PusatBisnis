@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIM UPT PUSAT BISNIS - Riwayat Pembayaran</title>
+<link rel="stylesheet" href="Menu.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div class="header-logo"><img src="PB.png" alt="PB"></div>
+    <div class="header-title">SIM UPT PUSAT BISNIS Pemerintah Kota Yogyakarta</div>
+  </div>
+  
+    <!-- NAVIGASI -->
+    <div class="nav">
+      <div class="nav-item active">
+        <a href="Dasboard.html">Home</a></div>
+        <div class="nav-item dropdown">
+          Sistem <span class="arrow">▾</span>
+        <div class="dropdown-sistem">
+            <a href="User.html">User</a>
+            <a href="Group.html">Group</a>
+            <a href="Menu.html">Menu</a>
+            <a href="HakAkses.html">Hak Akses</a>
+            <a href="Password.html">Password</a>
+            <a href="Konfigurasi.html">Konfigurasi</a>
+          </div>
+        </div>
+        <div class="nav-item dropdown">
+          Master <span class="arrow">▾</span>
+        <div class="dropdown-sistem">
+          <a href="Lahan.html">Lahan</a>
+          <a href="LahanPend.html">Lahan Fasilitas Pend.</a>
+          <a href="Biaya.html">Biaya Alat Listrik</a>
+          <a href="JenisLahan.html">Jenis Lahan</a>
+          <a href="JenisFasilitas.html">Jenis Fasilitas Pend.</a>
+          <a href="JenisDagangan.html">Jenis Dagangan</a>
+          <a href="JenisTarif.html">Jenis Tarif</a>
+          <a href="KelompokTarif.html">Kelompok Jenis Tarif</a>
+          <a href="UPT.html">UPT Pusat Bisnis</a>
+          <a href="ServiceCenter.html">Service center</a>
+          </div>
+        </div>
+        <div class="nav-item dropdown">
+          Tagihan <span class="arrow">▾</span>
+        <div class="dropdown-sistem">
+            <a href="TagihanMasal.html">Tagihan Masal</a>
+            <a href="PenguranganTarif.html">Pengurangan Tarif</a>
+            <a href="Invoice.html">Invoice</a>
+            <a href="InvoiceATM.html">Invoice ATM</a>
+            <a href="SaldoPlusMinus.html">Saldo Plus Minus</a>
+          </div>
+        </div>
+        <div class="nav-item dropdown">
+          Persewaan <span class="arrow">▾</span>
+        <div class="dropdown-sistem">
+            <a href="IdentitasPenyewa.html">Identitas Penyewaan</a>
+            <a href="PenetapanSewa.html">Penetapan Sewa</a>
+            <a href="PenetapanFasilitas.html">Penetapan Fasilitas Pend.</a>
+            <a href="Pelunasan.html">Pelunasan</a>
+            <a href="RegistrasiPengguna.html">Registrasi Pengguna</a>
+            <a href="InvoiceSewa.html">Invoice Sewa</a>
+            <a href="VerifikasiRegistrasiUser.html">Verifikasi Registrasi User</a>
+          </div>
+        </div>
+        <div class="nav-item dropdown">
+          Surat <span class="arrow">▾</span>
+        <div class="dropdown-sistem">
+            <a href="SuratPeringatan.html">Surat Peringatan (SP)</a>
+          </div>
+        </div>
+        <div class="nav-item dropdown">
+          Laporan <span class="arrow">▾</span>
+        <div class="dropdown-sistem">
+            <a href="Realisasi.html">Realisasi</a>
+            <a href="RekapRealisasi.html">Rekap Realisasi</a>
+            <a href="TargetPendapatan.html">Input Pendapatan Tahunan</a>
+            <a href="InputPendapatanBulanan.html">Input Pendapatan Bulanan</a>
+            <a href="CekLpPendapatan.html">Cetak Lp. Pendapatan</a>
+          </div>
+        </div>
+      <div class="nav-user" id="userMenu">
+        JSSAD8958 <span class="arrow">▾</span>
+        <div class="dropdown-menu" id="dropdownMenu">
+          <a href="#">Help</a>
+          <a href="#">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <!-- Management bar -->
+    <div class="management-bar">
+      <label>Data Menu</label>
+      <input type="text" placeholder="Search...">
+      <button class="btn-cari btn">Cari</button>
+      <a href="Advance.html" class="btn-advance btn">Advance</a>
+    </div>
+
+    <!-- Card -->
+    <div class="card">
+      <div class="card-header">
+        <h2>Daftar User</h2>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-bar">
+        <button class="btn btn-tambah">&#43; Tambah Menu</button>
+        <button class="btn btn-edit">&#9998; Edit Menu</button>
+        <button class="btn btn-hapus">&#128465; Hapus Group</button>
+      </div>
+
+      <!-- Table -->
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama Group</th>
+              <th>Keterangan</th>
+              <th>Tampil</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Sistem</td>
+              <td>#</td>
+              <td>
+                <label class="checkbox-container">
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>User</td>
+              <td>System/User</td>
+              <td>
+                <label class="checkbox-container">
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                </label>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Group</td>
+              <td>System/Group</td>
+              <td>
+                <label class="checkbox-container">
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                </label>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Menu</td>
+              <td>System/Menu</td>
+              <td>
+                <label class="checkbox-container">
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Hal Akses</td>
+              <td>System/Autentikasi</td>
+              <td>
+                <label class="checkbox-container">
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Profile</td>
+              <td>System/Profil</td>
+              <td>
+                <label class="checkbox-container">
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Password</td>
+              <td>System/Password</td>
+              <td>
+                <label class="checkbox-container">
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Persewaan</td>
+              <td>#</td>
+              <td>
+                <label class="checkbox-container">
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>Identitas Penyewaan</td>
+              <td>Pedagang/identitas</td>
+              <td>
+                <label class="checkbox-container">
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>Penetapan Sewa</td>
+              <td>Pedagang/Penetapan</td>
+              <td>
+                <label class="checkbox-container">
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                </label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination-bar">
+        <select>
+          <option>10</option>
+          <option>20</option>
+          <option>50</option>
+          <option>100</option>
+          <!-- <option>150</option>
+          <option>200</option> -->
+          <!-- <option>250</option> -->
+          <!-- <option>300</option> -->
+        </select>
+      </div>
+    </div>
+    <script>
+      const userMenu = document.getElementById("userMenu");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+    
+      userMenu.addEventListener("click", function (e) {
+        e.stopPropagation();
+        dropdownMenu.classList.toggle("show");
+      });
+    
+      document.addEventListener("click", function () {
+        dropdownMenu.classList.remove("show");
+      });
+  </script>
+  </div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>2019. UPT Pusat Bisnis.</span>
+  <a href="#">Panduan Pengguna</a>
+</div>
+
+</body>
+</html>

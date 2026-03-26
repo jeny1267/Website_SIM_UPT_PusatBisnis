@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIM UPT PUSAT BISNIS - Dashboard</title>
+  <link rel="stylesheet" href="Dasboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div class="header-logo"><img src="PB.png" alt="PB"></div>
+    <div class="header-title">SIM UPT PUSAT BISNIS Pemerintah Kota Yogyakarta</div>
+  </div>
+
+    <!-- NAVIGASI -->
+    <div class="nav">
+      <div class="nav-item active">
+        <a href="Dasboard.html">Home</a></div>
+      <div class="nav-item dropdown">
+        Sistem <span class="arrow">▾</span>
+        <div class="dropdown-sistem">
+          <a href="User.html">User</a>
+          <a href="Group.html">Group</a>
+          <a href="Menu.html">Menu</a>
+          <a href="HakAkses.html">Hak Akses</a>
+          <a href="Password.html">Password</a>
+          <a href="Konfigurasi.html">Konfigurasi</a>
+        </div>
+      </div>
+      <div class="nav-item dropdown">
+        Master <span class="arrow">▾</span>
+        <div class="dropdown-sistem">
+          <a href="Lahan.html">Lahan</a>
+          <a href="LahanPend.html">Lahan Fasilitas Pend.</a>
+          <a href="Biaya.html">Biaya Alat Listrik</a>
+          <a href="JenisLahan.html">Jenis Lahan</a>
+          <a href="JenisFasilitas.html">Jenis Fasilitas Pend.</a>
+          <a href="JenisDagangan.html">Jenis Dagangan</a>
+          <a href="JenisTarif.html">Jenis Tarif</a>
+          <a href="KelompokTarif.html">Kelompok Jenis Tarif</a>
+          <a href="UPT.html">UPT Pusat Bisnis</a>
+          <a href="ServiceCenter.html">Service center</a>
+        </div>
+      </div>
+      <div class="nav-item dropdown">
+        Tagihan <span class="arrow">▾</span>
+        <div class="dropdown-sistem">
+          <a href="TagihanMasal.html">Tagihan Masal</a>
+          <a href="PenguranganTarif.html">Pengurangan Tarif</a>
+          <a href="Invoice.html">Invoice</a>
+          <a href="InvoiceATM.html">Invoice ATM</a>
+          <a href="SaldoPlusMinus.html">Saldo Plus Minus</a>
+        </div>
+      </div>
+      <div class="nav-item dropdown">
+        Persewaan <span class="arrow">▾</span>
+        <div class="dropdown-sistem">
+          <a href="IdentitasPenyewaan.html">Identitas Penyewaan</a>
+          <a href="PenetapanSewa.html">Penetapan Sewa</a>
+          <a href="PenetapanFasilitas.html">Penetapan Fasilitas Pend.</a>
+          <a href="Pelunasan.html">Pelunasan</a>
+          <a href="RegistrasiPengguna.html">Registrasi Pengguna</a>
+          <a href="InvoiceSewa.html">Invoice Sewa</a>
+          <a href="VerifikasiRegistrasiUser.html">Verifikasi Registrasi User</a>
+        </div>
+      </div>
+      <div class="nav-item dropdown">
+        Surat <span class="arrow">▾</span>
+        <div class="dropdown-sistem">
+          <a href="SuratPeringatan.html">Surat Peringatan (SP)</a>
+        </div>
+      </div>
+      <div class="nav-item dropdown">
+        Laporan <span class="arrow">▾</span>
+        <div class="dropdown-sistem">
+          <a href="Realisasi.html">Realisasi</a>
+          <a href="RekapRealisasi.html">Rekap Realisasi</a>
+          <a href="TargetPendapatan.html">Input Pendapatan Tahunan</a>
+          <a href="InputPendapatanBulanan.html">Input Pendapatan Bulanan</a>
+          <a href="LaporanTarget.html">Cetak Lp. Pendapatan</a>
+        </div>
+      </div>
+
+      <!-- NOTIFICATION BUTTON -->
+      <div class="nav-notif" id="notifButton">
+        <i class="fa-solid fa-bell"></i>
+        <span class="notif-badge">3</span>
+
+        <div class="notif-dropdown" id="notifDropdown">
+          <div class="notif-header">
+            <span>Notifikasi</span>
+            <span class="notif-close" id="notifClose">&times;</span>
+          </div>
+
+          <div class="notif-item">
+            <div class="notif-icon">📩</div>
+            <div class="notif-content">
+              <strong>Sudah waktunya mendapat Surat Peringatan</strong>
+              <div>Supardi (Sampurna Jaya)</div>
+              <small>SP 1 · 01/01/2026</small>
+            </div>
+            <span class="notif-label">SP 1</span>
+          </div>
+
+          <div class="notif-item">
+            <div class="notif-icon">📩</div>
+            <div class="notif-content">
+              <strong>Sudah waktunya mendapat Surat Peringatan</strong>
+              <div>Suliswati (Maju Jaya)</div>
+              <small>SP 1 · 02/01/2026</small>
+            </div>
+            <span class="notif-label">SP 1</span>
+          </div>  
+            <div class="notif-footer" onclick="window.location.href='SuratPeringatan.html'">
+              Lihat Semua Surat Peringatan
+            </div>
+          </div>
+        </div>
+          <!-- USER MENU -->
+        <div class="nav-user" id="userMenu">
+          JSSAD8958 <span class="arrow">▾</span>
+          <div class="dropdown-menu" id="dropdownMenu">
+            <a href="#">Help</a>
+            <a href="#">Logout</a>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<!-- WELCOME BANNER -->
+<div class="welcome-banner">
+  <h2>
+    Selamat Datang di Sistem Informasi Manajemen 
+    UPT PUSAT BISNIS Pemerintah Kota Yogyakarta
+  </h2>
+  <p>
+    Anda bisa menjelajahi fitur-fitur dari SIM ini melalui menu di bagian atas
+  </p>
+</div>
+
+<!-- STATS ROW -->
+<div class="stats-row">
+
+  <!-- Total Tagihan -->
+  <div class="stat-card">
+    <div class="stat-header">
+      <div class="stat-icon" style="background:#ff7d0c;">🧾</div>
+      <div class="stat-title">Total Tagihan</div>
+    </div>
+    <div class="stat-amount">
+      Rp. 200.000.000 <span class="arrow-up">›</span>
+    </div>
+    <div class="stat-sub">
+      <span class="sub-icon">🖥</span>
+    </div>
+    <div class="progress-bg">
+      <div class="progress-fill" style="width:100%;background:#ff7d0c;"></div>
+    </div>
+  </div>
+
+  <!-- Sudah Bayar -->
+  <div class="stat-card" onclick="window.location.href='LihatSemua.html';" style="cursor: pointer;">
+    <div class="stat-header">
+      <div class="stat-icon" style="background:#0aa33f;">📋</div>
+      <div class="stat-title">Sudah Bayar</div>
+    </div>
+    <div class="stat-amount">
+      Rp. 100.000.000 <span class="arrow-up">›</span>
+    </div>
+    <div class="stat-sub">
+      <span class="sub-icon">🖥</span> 120 Transaksi
+    </div>
+    <div class="progress-bg">
+      <div class="progress-fill" style="width:50%;background:#0aa440;"></div>
+    </div>
+  </div>
+
+  <!-- Belum Bayar -->
+  <div class="stat-card">
+    <div class="stat-header">
+      <div class="stat-icon" style="background:#ff0004;">❌</div>
+      <div class="stat-title">Belum Bayar</div>
+    </div>
+    <div class="stat-amount">
+      Rp. 100.000.000 <span class="arrow-up">›</span>
+    </div>
+    <div class="stat-sub">
+      <span class="sub-icon">🖥</span>
+    </div>
+    <div class="progress-bg">
+      <div class="progress-fill" style="width:50%;background:#ff0004;"></div>
+    </div>
+  </div>
+
+  <!-- Realisasi Pembayaran -->
+  <div class="realisasi-card">
+    <div class="realisasi-header">
+      <div style="font-size:32px;">💰</div>
+      <div class="realisasi-title">Realisasi Pembayaran</div>
+    </div>
+
+    <div class="realisasi-amount-box">
+      <div class="realisasi-amount">Rp. 150.000.000</div>
+      <div style="font-size:32px;">💰</div>
+    </div>
+
+    <div class="realisasi-progress">
+      <div class="realisasi-progress-fill1"></div>
+      <div class="realisasi-progress-fill2"></div>
+    </div>
+
+    <div class="realisasi-sub">
+      <strong>Rp 150.000.000</strong> / Rp 200.000.000
+    </div>
+  </div>
+    <!-- Menu Sidebar -->
+  <div class="menu-sidebar">
+    <h3>Menu Pelunasan</h3>
+
+    <div class="menu-card orange">
+      <div class="menu-icon orange">📋</div>
+      <div class="menu-text">
+        <div class="label">Daftar Tagihan</div>
+        <div class="value">45 Tagihan Belum Bayar</div>
+      </div>
+      <div class="menu-arrow">›</div>
+    </div>
+
+    <div class="menu-card green">
+      <div class="menu-icon green">📄</div>
+      <div class="menu-text">
+        <div class="label">Riwayat Pembayaran</div>
+        <div class="value">120 Transaksi</div>
+      </div>
+      <div class="menu-arrow">›</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+
+  <!-- Payment Table -->
+  <div class="payment-table-section">
+    <h3>5 Pembayaran Terakhir</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama Penyewa</th>
+          <th>Nama Toko</th>
+          <th>Tanggal Pembayaran</th>
+          <th>Nominal</th>
+          <th>Keterangan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Supardi</td>
+          <td>Maju Jaya</td>
+          <td>01/01/2026</td>
+          <td class="nominal-red">Rp 6.000.000</td>
+          <td>
+            <label class="checkbox-container">
+                <input type="checkbox" checked>
+                <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Sulastri</td>
+          <td>Jaya Abadi</td>
+          <td>02/01/2026</td>
+          <td class="nominal-red">Rp 2.500.000</td>
+          <td>
+            <label class="checkbox-container">
+                <input type="checkbox" checked>
+                <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Sri Rahayu</td>
+          <td>Cahaya</td>
+          <td>03/01/2026</td>
+          <td class="nominal-red">Rp 5.000.000</td>
+          <td>
+            <label class="checkbox-container">
+                <input type="checkbox" checked>
+                <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Ahmad</td>
+          <td>Lancar Jaya</td>
+          <td>04/01/2026</td>
+          <td class="nominal-red">Rp 4.500.000</td>
+          <td>
+            <label class="checkbox-container">
+                <input type="checkbox" checked>
+                <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Dwi</td>
+          <td>Sumber</td>
+          <td>05/01/2026</td>
+          <td class="nominal-red">Rp 3.550.000</td>
+          <td>
+            <label class="checkbox-container">
+                <input type="checkbox" checked>
+                <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="btn-wrapper">
+      <a href="LihatSemua.html" class="btn-lihat">
+        Lihat Semua ›
+      </a>
+    </div>
+  </div>
+
+<!-- SCRIPT USER -->
+<script>
+    const userMenu = document.getElementById("userMenu");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+  
+    userMenu.addEventListener("click", function (e) {
+      e.stopPropagation();
+      dropdownMenu.classList.toggle("show");
+    });
+  
+    document.addEventListener("click", function () {
+      dropdownMenu.classList.remove("show");
+    });
+</script>
+
+<!-- SCRIPT NOTIF -->
+<script>
+const notifButton = document.getElementById("notifButton");
+const notifDropdown = document.getElementById("notifDropdown");
+const notifClose = document.getElementById("notifClose");
+
+notifButton.addEventListener("click", function (e) {
+  e.stopPropagation();
+  notifDropdown.classList.toggle("show");
+});
+
+notifClose.addEventListener("click", function () {
+  notifDropdown.classList.remove("show");
+});
+
+document.addEventListener("click", function () {
+  notifDropdown.classList.remove("show");
+});
+</script>
+
+<script>
+// Ambil data SP dari localStorage
+const dataSP = JSON.parse(localStorage.getItem("dataSP")) || [];
+
+// filter hanya yang SP
+const spList = dataSP.filter(row => row[6].includes("SP"));
+
+const notifBadge = document.querySelector(".notif-badge");
+const notifDropdownContent = document.getElementById("notifDropdown");
+
+// update jumlah notifikasi
+notifBadge.textContent = spList.length;
+
+// hapus notif lama
+const notifItems = notifDropdownContent.querySelectorAll(".notif-item");
+notifItems.forEach(item => item.remove());
+
+// ambil hanya 3 data teratas
+const top3 = spList.slice(0,3);
+
+// buat notif baru
+top3.forEach(row => {
+
+  const notifItem = document.createElement("div");
+  notifItem.className = "notif-item";
+
+  notifItem.innerHTML = `
+    <div class="notif-icon">📩</div>
+    <div class="notif-content">
+      <strong>Sudah waktunya mendapat Surat Peringatan</strong>
+      <div>${row[0]}</div>
+      <small>${row[6]}</small>
+    </div>
+    <span class="notif-label">${row[6]}</span>
+  `;
+
+  notifDropdownContent.insertBefore(
+    notifItem,
+    notifDropdownContent.querySelector(".notif-footer")
+  );
+});
+</script>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>2019. UPT Pusat Bisnis.</span>
+  <a href="#">Panduan Pengguna</a>
+</div>
+
+</body>
+</html>

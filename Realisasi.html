@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIM UPT PUSAT BISNIS - Laporan Realisasi</title>
+<link rel="stylesheet" href="Realisasi.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div class="header-logo"><img src="PB.png" alt="PB"></div>
+    <div class="header-title">SIM UPT PUSAT BISNIS Pemerintah Kota Yogyakarta</div>
+  </div>
+
+  <!-- NAVIGASI -->
+  <div class="nav">
+    <div class="nav-item active">
+      <a href="Dasboard.html">Home</a>
+    </div>
+    <div class="nav-item dropdown">
+      Sistem <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="User.html">User</a>
+        <a href="Group.html">Group</a>
+        <a href="Menu.html">Menu</a>
+        <a href="HakAkses.html">Hak Akses</a>
+        <a href="Password.html">Password</a>
+        <a href="Seting.html">Konfigurasi</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Master <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="DataLahan.html">Lahan</a>
+        <a href="LahanPend.html">Lahan Fasilitas Pend.</a>
+        <a href="BiayaListrik.html">Biaya Alat Listrik</a>
+        <a href="JenisLahan.html">Jenis Lahan</a>
+        <a href="JenisFasilitas.html">Jenis Fasilitas Pend.</a>
+        <a href="JenisDagangan.html">Jenis Dagangan</a>
+        <a href="JenisTarif.html">Jenis Tarif</a>
+        <a href="KelompokTarif.html">Kelompok Jenis Tarif</a>
+        <a href="UPT.html">UPT Pusat Bisnis</a>
+        <a href="ServiceCenter.html">Service center</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Tagihan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="TagihanMasal.html">Tagihan Masal</a>
+        <a href="PenguranganTarif.html">Pengurangan Tarif</a>
+        <a href="Invoice.html">Invoice</a>
+        <a href="InvoiceATM.html">Invoice ATM</a>
+        <a href="SaldoPlusMinus.html">Saldo Plus Minus</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Persewaan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="IdentitasPenyewa.html">Identitas Penyewaan</a>
+        <a href="PenetapanHak.html">Penetapan Sewa</a>
+        <a href="PenetapanFasilitas.html">Penetapan Fasilitas Pend.</a>
+        <a href="Pelunasan.html">Pelunasan</a>
+        <a href="RegistrasiPengguna.html">Registrasi Pengguna</a>
+        <a href="InvoiceSewa.html">Invoice Sewa</a>
+        <a href="VerifikasiRegistrasiUser.html">Verifikasi Registrasi User</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Surat <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="SuratPeringatan.html">Surat Peringatan (SP)</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Laporan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="Realisasi.html">Realisasi</a>
+        <a href="RekapRealisasi.html">Rekap Realisasi</a>
+        <a href="TargetPendapatan.html">Input Pendapatan Tahunan</a>
+        <a href="InputPendapatanBulanan.html">Input Pendapatan Bulanan</a>
+        <a href="CekLpPendapatan.html">Cetak Lp. Pendapatan</a>
+      </div>
+    </div>
+    <div class="nav-user" id="userMenu">
+      JSSAD8958 <span class="arrow">▾</span>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="#">Help</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+  <div class="page-title">Laporan Realisasi</div>
+  <hr class="page-divider">
+
+  <!-- Filter Form -->
+  <div class="filter-form">
+
+    <div class="form-row">
+      <label class="form-label">UPT Pusat Bisnis</label>
+      <span class="form-colon">:</span>
+      <div class="select-wrapper">
+        <select id="selectUPT">
+          <option value="">SEMUA UPT PUSAT BISNIS</option>
+          <option value="beringharjo">BRJ | BERINGHARJO</option>
+          <option value="kridosono">PWT | PRAWIROTAMAN</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label class="form-label">Jenis Retribusi</label>
+      <span class="form-colon">:</span>
+      <div class="select-wrapper">
+        <select id="selectJenisRetribusi">
+          <option value="lahan">Lahan</option>
+          <option value="fasilitas">Fasilitas Pendukung</option>
+          <option value="listrik">Listrik</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label class="form-label">Jenis Pembayaran</label>
+      <span class="form-colon">:</span>
+      <div class="select-wrapper">
+        <select id="selectJenisPembayaran">
+          <option value="">-- Pilih --</option>
+          <option value="tunai">Tunai</option>
+          <option value="transfer">Transfer</option>
+          <option value="atm">ATM</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label class="form-label">Jenis Lahan</label>
+      <span class="form-colon">:</span>
+      <div class="select-wrapper">
+        <select id="selectJenisLahan">
+          <option value="">-- Pilih --</option>
+          <option value="kios">Kios</option>
+          <option value="konter">Konter</option>
+          <option value="insidental">Insidental</option>
+          <option value="kantin">Kantin/Foodcourt</option>
+          <option value="ruang_kerja">Ruang Kerja Private</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label class="form-label">Tanggal Rekam</label>
+      <span class="form-colon">:</span>
+      <div class="date-range">
+        <input type="date" id="inputTanggalDari">
+        <span class="date-sep">s/d</span>
+        <input type="date" id="inputTanggalSampai">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label class="form-label"></label>
+      <span class="form-colon"></span>
+      <button class="btn-cari" onclick="cariData()">Cari</button>
+    </div>
+
+  </div>
+
+  <!-- Card Data Lahan -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Data Lahan</span>
+    </div>
+
+    <div class="card-action-bar">
+      <button class="btn-excel" onclick="exportExcel()">
+        <span class="excel-icon">&#128202;</span> Excel
+      </button>
+    </div>
+
+    <!-- Table area (empty by default, will fill on search) -->
+    <div class="table-wrapper" id="tableWrapper">
+      <table id="tableRealisasi" style="display:none;">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>UPT PuSAT BISNIS</th>
+            <th>Jenis Lahan</th>
+            <th>Jenis Pemb.</th>
+            <th>Nama Penyewa</th>
+            <th>Kode Billing</th>
+            <th>NIL</th>
+            <th>Lantai</th>
+            <th>Blok</th>
+            <th>Kode Lokasi</th>
+            <th>Alamat Penyewa</th>
+            <th>Tanggal Rekam</th>
+            <th>Nominal</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+      </table>
+      <div class="empty-area" id="emptyArea"></div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination-bar">
+      <select id="perPage">
+        <option value="20">20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>2019. UPT Pusat Bisnis.</span>
+  <a href="#">Panduan Pengguna</a>
+</div>
+
+<script>
+  // User dropdown
+  const userMenu = document.getElementById("userMenu");
+  const dropdownMenu = document.getElementById("dropdownMenu");
+  userMenu.addEventListener("click", function (e) {
+    e.stopPropagation();
+    dropdownMenu.classList.toggle("show");
+  });
+  document.addEventListener("click", function () {
+    dropdownMenu.classList.remove("show");
+  });
+
+  function cariData() {
+    const upt = document.getElementById("selectUPT").value;
+    const retribusi = document.getElementById("selectJenisRetribusi").value;
+    // Show table (demo: tampilkan tabel kosong setelah cari)
+    document.getElementById("tableRealisasi").style.display = "";
+    document.getElementById("emptyArea").style.display = "none";
+    // In real app, fetch data based on filters here
+  }
+
+  function exportExcel() {
+    const table = document.getElementById("tableRealisasi").outerHTML;
+
+    const blob = new Blob([table], {
+      type: "application/vnd.ms-excel"
+    });
+
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "Laporan_Realisasi.xls";
+    a.click();
+
+    URL.revokeObjectURL(url);
+  }
+
+  // DATA DUMMY (AMAN)
+const dataDummy = [
+  {
+    upt: "BERINGHARJO",
+    jenisLahan: "Kios",
+    pembayaran: "Angsuran",
+    nama: "Latifah",
+    billing: "347100001",
+    nil: "34.71.10.50.01.0001",
+    lantai: "II",
+    blok: "A",
+    kode: "A-01",
+    alamat: "Yogyakarta",
+    tanggal: "2026-01-10",
+    nominal: 1787000
+  },
+  {
+    upt: "BERINGHARJO",
+    jenisLahan: "Kios",
+    pembayaran: "Angsuran",
+    nama: "Munaroh",
+    billing: "347100002",
+    nil: "34.71.10.50.01.0002",
+    lantai: "I",
+    blok: "B",
+    kode: "B-02",
+    alamat: "Sleman",
+    tanggal: "2026-01-12",
+    nominal: 1521000
+  },
+
+  {
+    upt: "PRAWIROTAMAN",
+    jenisLahan: "Konter",
+    pembayaran: "Tunai",
+    nama: "Siti",
+    billing: "347100006",
+    nil: "34.71.10.50.01.0006",
+    lantai: "III",
+    blok: "F",
+    kode: "F-06",
+    alamat: "Bantul",
+    tanggal: "2026-01-22",
+    nominal: 1650340
+  },
+];
+
+  function cariData() {
+    const dari = document.getElementById("inputTanggalDari").value;
+    const sampai = document.getElementById("inputTanggalSampai").value;
+    const tbody = document.getElementById("tableBody");
+
+    tbody.innerHTML = "";
+
+    // FILTER DATA
+    const hasil = dataDummy.filter(item => {
+      if (!dari || !sampai) return true;
+      return item.tanggal >= dari && item.tanggal <= sampai;
+    });
+
+    // TAMPILKAN KE TABEL
+    hasil.forEach((item, index) => {
+      const row = `
+        <tr>
+          <td>${index + 1}</td>
+          <td>${item.upt}</td>
+          <td>${item.jenisLahan}</td>
+          <td>${item.pembayaran}</td>
+          <td>${item.nama}</td>
+          <td>${item.billing}</td>
+          <td>${item.nil}</td>
+          <td>${item.lantai}</td>
+          <td>${item.blok}</td>
+          <td>${item.kode}</td>
+          <td>${item.alamat}</td>
+          <td>${item.tanggal}</td>
+          <td>Rp ${item.nominal.toLocaleString("id-ID")}</td>
+        </tr>
+      `;
+      tbody.innerHTML += row;
+    });
+
+    document.getElementById("tableRealisasi").style.display = "";
+    document.getElementById("emptyArea").style.display = "none";
+  }
+</script>
+
+</body>
+</html>

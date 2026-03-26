@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIM UPT PUSAT BISNIS - Riwayat Pembayaran</title>
+<link rel="stylesheet" href="User.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div class="header-logo"><img src="PB.png" alt="PB"></div>
+    <div class="header-title">SIM UPT PUSAT BISNIS Pemerintah Kota Yogyakarta</div>
+  </div>
+  
+  <!-- NAVIGASI -->
+  <div class="nav">
+    <div class="nav-item active">
+      <a href="Dasboard.html">Home</a>
+    </div>
+    <div class="nav-item dropdown">
+      Sistem <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="User.html">User</a>
+        <a href="Group.html">Group</a>
+        <a href="Menu.html">Menu</a>
+        <a href="HakAkses.html">Hak Akses</a>
+        <a href="Password.html">Password</a>
+        <a href="Konfigurasi.html">Konfigurasi</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Master <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="Lahan.html">Lahan</a>
+        <a href="LahanPend.html">Lahan Fasilitas Pend.</a>
+        <a href="Biaya.html">Biaya Alat Listrik</a>
+        <a href="JenisLahan.html">Jenis Lahan</a>
+        <a href="JenisFasilitas.html">Jenis Fasilitas Pend.</a>
+        <a href="JenisDagangan.html">Jenis Dagangan</a>
+        <a href="JenisTarif.html">Jenis Tarif</a>
+        <a href="KelompokTarif.html">Kelompok Jenis Tarif</a>
+        <a href="UPT.html">UPT Pusat Bisnis</a>
+        <a href="ServiceCenter.html">Service center</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Tagihan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="TagihanMasal.html">Tagihan Masal</a>
+        <a href="PenguranganTarif.html">Pengurangan Tarif</a>
+        <a href="Invoice.html">Invoice</a>
+        <a href="InvoiceATM.html">Invoice ATM</a>
+        <a href="SaldoPlusMinus.html">Saldo Plus Minus</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Persewaan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="IdentitasPenyewa.html">Identitas Penyewaan</a>
+        <a href="PenetapanHak.html">Penetapan Sewa</a>
+        <a href="PenetapanFasilitas.html">Penetapan Fasilitas Pend.</a>
+        <a href="Pelunasan.html">Pelunasan</a>
+        <a href="RegistrasiPengguna.html">Registrasi Pengguna</a>
+        <a href="InvoiceSewa.html">Invoice Sewa</a>
+        <a href="VerifikasiRegistrasiUser.html">Verifikasi Registrasi User</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Surat <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="SuratPeringatan.html">Surat Peringatan (SP)</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Laporan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="Realisasi.html">Realisasi</a>
+        <a href="RekapRealisasi.html">Rekap Realisasi</a>
+        <a href="TargetPendapatan.html">Input Pendapatan Tahunan</a>
+        <a href="InputPendapatanBln.html">Input Pendapatan Bulanan</a>
+        <a href="CekLpPendapatan.html">Cetak Lp. Pendapatan</a>
+      </div>
+    </div>
+    <div class="nav-user" id="userMenu">
+      JSSAD8958 <span class="arrow">▾</span>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="#">Help</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="content">
+  <div class="management-bar">
+    <label>Managemen User</label>
+    <input type="text" placeholder="Search...">
+    <button class="btn-cari btn">Cari</button>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h2>Daftar User</h2>
+    </div>
+
+    <div class="action-bar">
+      <button class="btn btn-tambah" id="btnTambahUser">&#43; Tambah User</button>
+      <button class="btn btn-edit">&#9998; Edit User</button>
+      <button class="btn btn-hapus">&#128465; Hapus User</button>
+      <button class="btn btn-download">&#8634; Download</button>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama User</th>
+            <th>Nama Lengkap</th>
+            <th>NIP</th>
+            <th>Nama Group</th>
+            <th>Email</th>
+            <th>ID JSS</th>
+            <th>Expired</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td><td>Admin</td><td>Administrator</td>
+            <td>196603291987032005</td><td>Admin</td>
+            <td>bluecreative22@gmail.com</td><td>JSS-A0198</td><td>01-10-2026</td>
+          </tr>
+          <tr>
+            <td>2</td><td>Sertian</td><td>SEPTIAN</td>
+            <td>196603291987032005</td><td>Admin</td>
+            <td>bluecreative22@gmail.com</td><td>JSS-A0198</td><td>01-10-2026</td>
+          </tr>
+          <tr>
+            <td>3</td><td>Sertian</td><td>Airlangga Maharajasa Anoraga</td>
+            <td>196603291987032005</td><td>Admin</td>
+            <td>bluecreative22@gmail.com</td><td>JSS-A0198</td><td>01-10-2026</td>
+          </tr>
+          <tr>
+            <td>4</td><td>Sertian</td><td>Airlangga Maharajasa Anoraga</td>
+            <td>196603291987032005</td><td>Admin</td>
+            <td>bluecreative22@gmail.com</td><td>JSS-A0198</td><td>01-10-2026</td>
+          </tr>
+          <tr>
+            <td>5</td><td>Sertian</td><td>Airlangga Maharajasa Anoraga</td>
+            <td>196603291987032005</td><td>Admin</td>
+            <td>bluecreative22@gmail.com</td><td>JSS-A0198</td><td>01-10-2026</td>
+          </tr>
+          <tr>
+            <td>6</td><td>Sertian</td><td>Airlangga Maharajasa Anoraga</td>
+            <td>196603291987032005</td><td>Admin</td>
+            <td>bluecreative22@gmail.com</td><td>JSS-A0198</td><td>01-10-2026</td>
+          </tr>
+          <tr>
+            <td>7</td><td>Sertian</td><td>Airlangga Maharajasa Anoraga</td>
+            <td>196603291987032005</td><td>Admin</td>
+            <td>bluecreative22@gmail.com</td><td>JSS-A0198</td><td>01-10-2026</td>
+          </tr>
+          <tr>
+            <td>8</td><td>Sertian</td><td>Airlangga Maharajasa Anoraga</td>
+            <td>196603291987032005</td><td>Admin</td>
+            <td>bluecreative22@gmail.com</td><td>JSS-A0198</td><td>01-10-2026</td>
+          </tr>
+          <tr>
+            <td>9</td><td>Sertian</td><td>Airlangga Maharajasa Anoraga</td>
+            <td>196603291987032005</td><td>Admin</td>
+            <td>bluecreative22@gmail.com</td><td>JSS-A0198</td><td>01-10-2026</td>
+          </tr>
+          <tr>
+            <td>10</td><td>Sertian</td><td>Airlangga Maharajasa Anoraga</td>
+            <td>196603291987032005</td><td>Admin</td>
+            <td>bluecreative22@gmail.com</td><td>JSS-A0198</td><td>01-10-2026</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pagination-bar">
+      <select>
+        <option>20</option>
+        <option>50</option>
+        <option>100</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>2019. UPT Pusat Bisnis.</span>
+  <a href="#">Panduan Pengguna</a>
+</div>
+
+<!-- POPUP TAMBAH USER -->
+<div class="popup-overlay" id="popupTambahUser">
+  <div class="popup-box">
+    <div class="popup-title-bar">Tambah User</div>
+    <div class="popup-inner">
+      <div class="popup-section-title">Data User</div>
+      <div class="popup-form">
+        <div class="form-row">
+          <span class="form-label">ID JSS</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputIdJSS">
+        </div>
+        <div class="form-row">
+          <span class="form-label">Username</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputUsername">
+        </div>
+        <div class="form-row">
+          <span class="form-label">Nama Langkah</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputNamaLangkah">
+        </div>
+        <div class="form-row">
+          <span class="form-label">NIP</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputNIP">
+        </div>
+        <div class="form-row">
+          <span class="form-label">E-mail</span>
+          <span class="form-colon">:</span>
+          <input type="email" id="inputEmail">
+        </div>
+        <div class="form-row">
+          <span class="form-label">Group</span>
+          <span class="form-colon">:</span>
+          <span class="form-group-value"></span>
+        </div>
+        <div class="form-row">
+          <span class="form-label">Tanggal Expired</span>
+          <span class="form-colon">:</span>
+          <span class="form-group-value"></span>
+        </div>
+        <div class="form-row">
+          <span class="form-label">Aktif</span>
+          <span class="form-colon">:</span>
+          <div class="radio-group">
+            <label><input type="radio" name="aktif" value="ya" checked> Ya</label>
+            <label><input type="radio" name="aktif" value="tidak"> Tidak</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup-footer">
+      <button class="btn-save" id="btnSave">
+        <span class="icon-save">✔</span> Save
+      </button>
+      <button class="btn-riset" id="btnRiset">
+        <span class="icon-riset">✖</span> Riset
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // User dropdown menu
+  const userMenu = document.getElementById("userMenu");
+  const dropdownMenu = document.getElementById("dropdownMenu");
+  userMenu.addEventListener("click", function (e) {
+    e.stopPropagation();
+    dropdownMenu.classList.toggle("show");
+  });
+  document.addEventListener("click", function () {
+    dropdownMenu.classList.remove("show");
+  });
+
+  // Popup Tambah User
+  const btnTambahUser = document.getElementById("btnTambahUser");
+  const popupTambahUser = document.getElementById("popupTambahUser");
+  const btnRiset = document.getElementById("btnRiset");
+  const btnSave = document.getElementById("btnSave");
+
+  btnTambahUser.addEventListener("click", function () {
+    popupTambahUser.classList.add("active");
+  });
+
+  popupTambahUser.addEventListener("click", function (e) {
+    if (e.target === popupTambahUser) {
+      popupTambahUser.classList.remove("active");
+    }
+  });
+
+  btnRiset.addEventListener("click", function () {
+    document.getElementById("inputIdJSS").value = "";
+    document.getElementById("inputUsername").value = "";
+    document.getElementById("inputNamaLangkah").value = "";
+    document.getElementById("inputNIP").value = "";
+    document.getElementById("inputEmail").value = "";
+    document.querySelector('input[name="aktif"][value="ya"]').checked = true;
+    popupTambahUser.classList.remove("active");
+  });
+
+  btnSave.addEventListener("click", function () {
+    const username = document.getElementById("inputUsername").value.trim();
+    const namaLangkah = document.getElementById("inputNamaLangkah").value.trim();
+    if (!username || !namaLangkah) {
+      alert("Username dan Nama Langkah wajib diisi!");
+      return;
+    }
+    alert(`Data user "${username}" berhasil disimpan!`);
+    popupTambahUser.classList.remove("active");
+  });
+</script>
+
+</body>
+</html>

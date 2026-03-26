@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIM UPT PUSAT BISNIS - Setting</title>
+<link rel="stylesheet" href="Konfigurasi.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div class="header-logo"><img src="PB.png" alt="PB"></div>
+    <div class="header-title">SIM UPT PUSAT BISNIS Pemerintah Kota Yogyakarta</div>
+  </div>
+
+  <!-- NAVIGASI -->
+  <div class="nav">
+    <div class="nav-item active">
+      <a href="Dasboard.html">Home</a>
+    </div>
+    <div class="nav-item dropdown">
+      Sistem <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="User.html">User</a>
+        <a href="Group.html">Group</a>
+        <a href="Menu.html">Menu</a>
+        <a href="HakAkses.html">Hak Akses</a>
+        <a href="Password.html">Password</a>
+        <a href="Konfigurasi.html">Konfigurasi</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Master <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="Lahan.html">Lahan</a>
+        <a href="LahanPend.html">Lahan Fasilitas Pend.</a>
+        <a href="Biaya.html">Biaya Alat Listrik</a>
+        <a href="JenisLahan.html">Jenis Lahan</a>
+        <a href="JenisFasilitas.html">Jenis Fasilitas Pend.</a>
+        <a href="JenisDagangan.html">Jenis Dagangan</a>
+        <a href="JenisTarif.html">Jenis Tarif</a>
+        <a href="KelompokTarif.html">Kelompok Jenis Tarif</a>
+        <a href="UPT.html">UPT Pusat Bisnis</a>
+        <a href="ServiceCenter.html">Service center</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Tagihan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="TagihanMasal.html">Tagihan Masal</a>
+        <a href="PenguranganTarif.html">Pengurangan Tarif</a>
+        <a href="Invoice.html">Invoice</a>
+        <a href="InvoiceATM.html">Invoice ATM</a>
+        <a href="SaldoPlusMinus.html">Saldo Plus Minus</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Persewaan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="IdentitasPenyewa.html">Identitas Penyewaan</a>
+        <a href="PenetapanSewa.html">Penetapan Sewa</a>
+        <a href="PenetapanFasilitas.html">Penetapan Fasilitas Pend.</a>
+        <a href="Pelunasan.html">Pelunasan</a>
+        <a href="RegistrasiPengguna.html">Registrasi Pengguna</a>
+        <a href="InvoiceSewa.html">Invoice Sewa</a>
+        <a href="VerifikasiRegistrasiUser.html">Verifikasi Registrasi User</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Surat <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="SuratPeringatan.html">Surat Peringatan (SP)</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Laporan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="Realisasi.html">Realisasi</a>
+        <a href="RekapRealisasi.html">Rekap Realisasi</a>
+        <a href="TargetPendapatan.html">Input Pendapatan Tahunan</a>
+        <a href="InputPendapatanBulanan.html">Input Pendapatan Bulanan</a>
+        <a href="CekLpPendapatan.html">Cetak Lp. Pendapatan</a>
+      </div>
+    </div>
+    <div class="nav-user" id="userMenu">
+      JSSAD8958 <span class="arrow">▾</span>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="#">Help</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+  <div class="page-title">Setting</div>
+  <hr class="page-divider">
+
+  <div class="card">
+    <!-- Ubah Seting Button -->
+    <div class="card-action-bar">
+      <button class="btn-ubah" id="btnUbahSeting">&#9998; Ubah Seting</button>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrapper">
+      <table id="tableSettings">
+        <thead>
+          <tr>
+            <th style="width:40px;">No</th>
+            <th>Nama Setting</th>
+            <th>Nilai</th>
+            <th>Deskripsi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>nama_kepala_dinas</td>
+            <td>Drs.YUNIANTO DWISUTONO</td>
+            <td>ttd</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>nip_kepala_dinas</td>
+            <td>19660628 198602 1 002</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>ttd_kepala_dinas</td>
+            <td>ttd_kepala_dinas.jpg</td>
+            <td>ttd</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>header_ttd_kepala_dinas</td>
+            <td>KEPALA DINAS</td>
+            <td></td>
+          </tr>
+          <tr class="row-orange">
+            <td>5</td>
+            <td>nama_kepala_upt</td>
+            <td>AGUNG DINI WAHYUDI SOELISTYO S.SI., M.ENG</td>
+            <td></td>
+          </tr>
+          <tr class="row-orange">
+            <td>6</td>
+            <td>ttd_kepala_upt</td>
+            <td>kepalaupt.png</td>
+            <td></td>
+          </tr>
+          <tr class="row-orange">
+            <td>7</td>
+            <td>nip_kepala_upt</td>
+            <td>19840302 200902 1 004</td>
+            <td></td>
+          </tr>
+          <tr class="row-orange">
+            <td>8</td>
+            <td>header_ttd_upt</td>
+            <td>KEPALA UPT</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>nama_plh</td>
+            <td>AGUNG DINI WAHYUDI SOELISTYO S.SI., M.ENG</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>ttd_plh</td>
+            <td>kepalaupt.png</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>nip_plh</td>
+            <td>19840302 200902 1 004</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>header_ttd_plh</td>
+            <td>PLH</td>
+            <td></td>
+          </tr>
+          <tr class="row-orange">
+            <td>13</td>
+            <td>nama_blud</td>
+            <td>AGUNG DINI WAHYUDI SOELISTYO S.SI., M.ENG</td>
+            <td></td>
+          </tr>
+          <tr class="row-orange">
+            <td>14</td>
+            <td>ttd_blud</td>
+            <td>kepalaupt.png</td>
+            <td></td>
+          </tr>
+          <tr class="row-orange">
+            <td>15</td>
+            <td>nip_blud</td>
+            <td>19840302 200902 1 004</td>
+            <td></td>
+          </tr>
+          <tr class="row-orange">
+            <td>16</td>
+            <td>header_ttd_blud</td>
+            <td>BLUD</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td>ttd_aktif</td>
+            <td>
+              <div class="radio-group">
+                <label><input type="radio" name="ttd_aktif" value="kepala_dinas"> Kepala DINAS</label>
+                <label><input type="radio" name="ttd_aktif" value="kepala_upt" checked> Kepala UPT</label>
+                <label><input type="radio" name="ttd_aktif" value="plh"> PLH</label>
+              </div>
+            </td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>© 2019. UPT Pusat Bisnis.</span>
+  <a href="#">Panduan Pengguna</a>
+</div>
+
+<!-- POPUP UBAH SETING -->
+<div class="popup-overlay" id="popupUbahSeting">
+  <div class="popup-box">
+    <div class="popup-title-bar">Ubah Seting</div>
+    <div class="popup-inner">
+      <div class="popup-section-title">Data Seting</div>
+      <div class="popup-form">
+        <div class="form-row">
+          <span class="form-label">Nama Seting</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputNamaSeting" placeholder="Nama Seting...">
+        </div>
+        <div class="form-row">
+          <span class="form-label">Nilai</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputNilai" placeholder="Nilai...">
+        </div>
+        <div class="form-row">
+          <span class="form-label">Deskripsi</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputDeskripsi" placeholder="Deskripsi...">
+        </div>
+      </div>
+    </div>
+    <div class="popup-footer">
+      <button class="btn-save" id="btnSaveSeting">
+        <span class="icon-save">✔</span> Save
+      </button>
+      <button class="btn-riset" id="btnRisetSeting">
+        <span class="icon-riset">✖</span> Riset
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // User dropdown menu
+  const userMenu = document.getElementById("userMenu");
+  const dropdownMenu = document.getElementById("dropdownMenu");
+  userMenu.addEventListener("click", function (e) {
+    e.stopPropagation();
+    dropdownMenu.classList.toggle("show");
+  });
+  document.addEventListener("click", function () {
+    dropdownMenu.classList.remove("show");
+  });
+
+  // Popup Ubah Seting
+  const btnUbahSeting = document.getElementById("btnUbahSeting");
+  const popupUbahSeting = document.getElementById("popupUbahSeting");
+  const btnRisetSeting = document.getElementById("btnRisetSeting");
+  const btnSaveSeting = document.getElementById("btnSaveSeting");
+
+  btnUbahSeting.addEventListener("click", function () {
+    popupUbahSeting.classList.add("active");
+  });
+
+  popupUbahSeting.addEventListener("click", function (e) {
+    if (e.target === popupUbahSeting) {
+      popupUbahSeting.classList.remove("active");
+    }
+  });
+
+  btnRisetSeting.addEventListener("click", function () {
+    document.getElementById("inputNamaSeting").value = "";
+    document.getElementById("inputNilai").value = "";
+    document.getElementById("inputDeskripsi").value = "";
+    popupUbahSeting.classList.remove("active");
+  });
+
+  btnSaveSeting.addEventListener("click", function () {
+    const namaSeting = document.getElementById("inputNamaSeting").value.trim();
+    if (!namaSeting) {
+      alert("Nama Seting wajib diisi!");
+      return;
+    }
+    alert(`Seting "${namaSeting}" berhasil disimpan!`);
+    popupUbahSeting.classList.remove("active");
+  });
+</script>
+
+</body>
+</html>

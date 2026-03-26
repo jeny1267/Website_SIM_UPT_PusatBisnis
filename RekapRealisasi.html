@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIM UPT PUSAT BISNIS - Rekap Realisasi</title>
+<link rel="stylesheet" href="RekapRealisasi.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div class="header-logo"><img src="PB.png" alt="PB"></div>
+    <div class="header-title">SIM UPT PUSAT BISNIS Pemerintah Kota Yogyakarta</div>
+  </div>
+
+  <!-- NAVIGASI -->
+  <div class="nav">
+    <div class="nav-item active">
+      <a href="Dasboard.html">Home</a>
+    </div>
+    <div class="nav-item dropdown">
+      Sistem <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="User.html">User</a>
+        <a href="Group.html">Group</a>
+        <a href="Menu.html">Menu</a>
+        <a href="HakAkses.html">Hak Akses</a>
+        <a href="Password.html">Password</a>
+        <a href="Seting.html">Konfigurasi</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Master <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="DataLahan.html">Lahan</a>
+        <a href="LahanPend.html">Lahan Fasilitas Pend.</a>
+        <a href="BiayaListrik.html">Biaya Alat Listrik</a>
+        <a href="JenisLahan.html">Jenis Lahan</a>
+        <a href="JenisFasilitas.html">Jenis Fasilitas Pend.</a>
+        <a href="JenisDagangan.html">Jenis Dagangan</a>
+        <a href="JenisTarif.html">Jenis Tarif</a>
+        <a href="KelompokTarif.html">Kelompok Jenis Tarif</a>
+        <a href="UPT.html">UPT Pusat Bisnis</a>
+        <a href="ServiceCenter.html">Service center</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Tagihan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="TagihanMasal.html">Tagihan Masal</a>
+        <a href="PenguranganTarif.html">Pengurangan Tarif</a>
+        <a href="Invoice.html">Invoice</a>
+        <a href="InvoiceATM.html">Invoice ATM</a>
+        <a href="SaldoPlusMinus.html">Saldo Plus Minus</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Persewaan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="IdentitasPenyewa.html">Identitas Penyewaan</a>
+        <a href="PenetapanHak.html">Penetapan Sewa</a>
+        <a href="PenetapanFasilitas.html">Penetapan Fasilitas Pend.</a>
+        <a href="Pelunasan.html">Pelunasan</a>
+        <a href="RegistrasiPengguna.html">Registrasi Pengguna</a>
+        <a href="InvoiceSewa.html">Invoice Sewa</a>
+        <a href="VerifikasiRegistrasiUser.html">Verifikasi Registrasi User</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Surat <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="SuratPeringatan.html">Surat Peringatan (SP)</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Laporan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="Realisasi.html">Realisasi</a>
+        <a href="RekapRealisasi.html">Rekap Realisasi</a>
+        <a href="TargetPendapatan.html">Input Pendapatan Tahunan</a>
+        <a href="InputPendapatanBln.html">Input Pendapatan Bulanan</a>
+        <a href="CekLpPendapatan.html">Cetak Lp. Pendapatan</a>
+      </div>
+    </div>
+    <div class="nav-user" id="userMenu">
+      JSSAD8958 <span class="arrow">▾</span>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="#">Help</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+  <div class="page-title">Laporan Rekap Realisasi</div>
+  <hr class="page-divider">
+
+  <!-- Filter Form -->
+  <div class="filter-form">
+    <div class="form-row">
+      <label class="form-label">Tahun</label>
+      <span class="form-colon">:</span>
+      <div class="input-calendar-wrapper">
+        <button class="btn-calendar" id="btnCalendar" title="Pilih Tahun">
+          &#128197;
+        </button>
+        <input type="text" class="inputTahun" id="inputTahun" maxlength="4" readonly>
+      </div>
+    </div>
+    <div class="form-row">
+      <label class="form-label"></label>
+      <span class="form-colon"></span>
+      <button class="btn-proses" id="btnProses">Proses</button>
+    </div>
+  </div>
+
+  <!-- Year Picker Dropdown -->
+  <div class="year-picker" id="yearPicker">
+    <div class="year-picker-header">
+      <button class="year-nav" id="btnPrevDecade">&#9664;</button>
+      <span class="year-range" id="yearRange"></span>
+      <button class="year-nav" id="btnNextDecade">&#9654;</button>
+    </div>
+    <div class="year-grid" id="yearGrid"></div>
+  </div>
+
+  <!-- Result area (shown after Proses) -->
+  <div class="result-area" id="resultArea" style="display:none;">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Rekap Realisasi Tahun <span id="labelTahun"></span></span>
+      </div>
+      <div class="card-action-bar">
+        <button class="btn-excel" onclick="exportExcel()">
+          <span class="excel-icon">&#128202;</span> Excel
+        </button>
+      </div>
+      <div class="table-wrapper">
+        <table id="tableRekap">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Lantai</th>
+              <th>Blok</th>
+              <th>Lokasi</th>
+              <th>Nama</th>
+              <th>Januari</th>
+              <th>Februari</th>
+              <th>Maret</th>
+              <th>April</th>
+              <th>Mei</th>
+              <th>Juni</th>
+              <th>Juli</th>
+              <th>Agustus</th>
+              <th>September</th>
+              <th>Oktober</th>
+              <th>November</th>
+              <th>Desember</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+          </tbody>
+        </table>
+      </div>
+      <div class="pagination-bar">
+        <select>
+          <option>20</option>
+          <option>50</option>
+          <option>100</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>2019. UPT Pusat Bisnis.</span>
+  <a href="#">Panduan Pengguna</a>
+</div>
+
+<script>
+  // ===== User dropdown =====
+  const userMenu = document.getElementById("userMenu");
+  const dropdownMenu = document.getElementById("dropdownMenu");
+  userMenu.addEventListener("click", function (e) {
+    e.stopPropagation();
+    dropdownMenu.classList.toggle("show");
+  });
+  document.addEventListener("click", function (e) {
+    dropdownMenu.classList.remove("show");
+    // Close year picker if click outside
+    const picker = document.getElementById("yearPicker");
+    const btn = document.getElementById("btnCalendar");
+    if (!picker.contains(e.target) && e.target !== btn) {
+      picker.style.display = "none";
+    }
+  });
+
+  // ===== Year Picker =====
+  let currentDecadeStart = Math.floor(new Date().getFullYear() / 10) * 10;
+  let selectedYear = null;
+
+  function renderYearPicker() {
+    const grid = document.getElementById("yearGrid");
+    const range = document.getElementById("yearRange");
+    range.textContent = currentDecadeStart + " – " + (currentDecadeStart + 11);
+    grid.innerHTML = "";
+    for (let y = currentDecadeStart; y < currentDecadeStart + 12; y++) {
+      const btn = document.createElement("button");
+      btn.textContent = y;
+      btn.className = "year-btn" + (y === selectedYear ? " selected" : "");
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        selectedYear = y;
+        document.getElementById("inputTahun").value = y;
+        document.getElementById("yearPicker").style.display = "none";
+        renderYearPicker();
+      });
+      grid.appendChild(btn);
+    }
+  }
+
+  document.getElementById("btnCalendar").addEventListener("click", function (e) {
+    e.stopPropagation();
+    const picker = document.getElementById("yearPicker");
+    picker.style.display = picker.style.display === "block" ? "none" : "block";
+    renderYearPicker();
+  });
+
+  document.getElementById("btnPrevDecade").addEventListener("click", function (e) {
+    e.stopPropagation();
+    currentDecadeStart -= 12;
+    renderYearPicker();
+  });
+
+  document.getElementById("btnNextDecade").addEventListener("click", function (e) {
+    e.stopPropagation();
+    currentDecadeStart += 12;
+    renderYearPicker();
+  });
+
+  // ===== Proses =====
+document.getElementById("btnProses").addEventListener("click", function () {
+
+  const tahun = document.getElementById("inputTahun").value.trim();
+  if (!tahun) {
+    alert("Pilih tahun terlebih dahulu!");
+    return;
+  }
+
+  document.getElementById("labelTahun").textContent = tahun;
+
+  const tbody = document.getElementById("tableBody");
+  tbody.innerHTML = "";
+
+  dummyData.forEach((item, index) => {
+
+    const row = `
+      <tr>
+        <td>${index + 1}</td>
+        <td>${item.lantai}</td>
+        <td>${item.blok}</td>
+        <td>${item.lokasi}</td>
+        <td>${item.nama}</td>
+
+        <td>${format(item.bulan.jan)}</td>
+        <td>${format(item.bulan.feb)}</td>
+        <td>${format(item.bulan.mar)}</td>
+        <td>${format(item.bulan.apr)}</td>
+        <td>${format(item.bulan.mei)}</td>
+        <td>${format(item.bulan.jun)}</td>
+        <td>${format(item.bulan.jul)}</td>
+        <td>${format(item.bulan.ags)}</td>
+        <td>${format(item.bulan.sep)}</td>
+        <td>${format(item.bulan.okt)}</td>
+        <td>${format(item.bulan.nov)}</td>
+        <td>${format(item.bulan.des)}</td>
+      </tr>
+    `;
+
+    tbody.innerHTML += row;
+  });
+
+  document.getElementById("resultArea").style.display = "block";
+});
+
+
+  // Init year picker range
+  renderYearPicker();
+
+const dummyData = [
+  {
+    lantai: "II",
+    blok: "A",
+    lokasi: "A-01",
+    nama: "Latifah",
+    bulan: {
+      jan: 1787000,
+      feb: 0,
+      mar: 0,
+      apr: 0,
+      mei: 0,
+      jun: 0,
+      jul: 0,
+      ags: 0,
+      sep: 0,
+      okt: 0,
+      nov: 0,
+      des: 0
+    }
+  },
+  {
+    lantai: "I",
+    blok: "B",
+    lokasi: "B-02",
+    nama: "Munaroh",
+    bulan: {
+      jan: 1521000,
+      feb: 0,
+      mar: 0,
+      apr: 0,
+      mei: 0,
+      jun: 0,
+      jul: 0,
+      ags: 0,
+      sep: 0,
+      okt: 0,
+      nov: 0,
+      des: 0
+    }
+  },
+    {
+    lantai: "III",
+    blok: "F",
+    lokasi: "F-06",
+    nama: "Siti",
+    bulan: {
+      jan: 1650340,
+      feb: 0,
+      mar: 0,
+      apr: 0,
+      mei: 0,
+      jun: 0,
+      jul: 0,
+      ags: 0,
+      sep: 0,
+      okt: 0,
+      nov: 0,
+      des: 0
+    }
+  }
+];
+
+//EXPORT EXCEL
+function exportExcel() {
+  let table = document.getElementById("tableRekap").outerHTML;
+
+  // Tambahkan style border ke semua table
+  const style = `
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+      td, th {
+        padding: 5px;
+        text-align: left;
+      }
+    </style>
+  `;
+
+  const html = `
+    <html>
+    <head>${style}</head>
+    <body>${table}</body>
+    </html>
+  `;
+
+  const blob = new Blob([html], {
+    type: "application/vnd.ms-excel"
+  });
+
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "Rekap_Realisasi.xls";
+  a.click();
+
+  URL.revokeObjectURL(url);
+}
+
+function format(angka) {
+  return angka === 0 ? "0" : angka.toLocaleString("id-ID");
+}
+</script>
+
+</body>
+</html>

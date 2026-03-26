@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIM UPT PUSAT BISNIS - Riwayat Pembayaran</title>
+<link rel="stylesheet" href="LihaSemua.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div class="header-logo"><img src="PB.png" alt="PB"></div>
+    <div class="header-title">SIM UPT PUSAT BISNIS Pemerintah Kota Yogyakarta</div>
+  </div>
+
+    <!-- NAVIGASI -->
+    <div class="nav">
+      <div class="nav-item active">
+        <a href="Dasboard.html">Home</a></div>
+        <div class="nav-item dropdown">
+          Sistem <span class="arrow">▾</span>
+        <div class="dropdown-sistem">
+            <a href="User.html">User</a>
+            <a href="Group.html">Group</a>
+            <a href="Menu.html">Menu</a>
+            <a href="HakAkses.html">Hak Akses</a>
+            <a href="Password.html">Password</a>
+            <a href="Konfigurasi.html">Konfigurasi</a>
+          </div>
+        </div>
+        <div class="nav-item dropdown">
+          Master <span class="arrow">▾</span>
+        <div class="dropdown-sistem">
+          <a href="Lahan.html">Lahan</a>
+          <a href="LahanPend.html">Lahan Fasilitas Pend.</a>
+          <a href="Biaya.html">Biaya Alat Listrik</a>
+          <a href="JenisLahan.html">Jenis Lahan</a>
+          <a href="JenisFasilitas.html">Jenis Fasilitas Pend.</a>
+          <a href="JenisDagangan.html">Jenis Dagangan</a>
+          <a href="JenisTarif.html">Jenis Tarif</a>
+          <a href="KelompokTarif.html">Kelompok Jenis Tarif</a>
+          <a href="UPT.html">UPT Pusat Bisnis</a>
+          <a href="ServiceCenter.html">Service center</a>
+          </div>
+        </div>
+        <div class="nav-item dropdown">
+          Tagihan <span class="arrow">▾</span>
+        <div class="dropdown-sistem">
+            <a href="TagihanMasal.html">Tagihan Masal</a>
+            <a href="PenguranganTarif.html">Pengurangan Tarif</a>
+            <a href="Invoice.html">Invoice</a>
+            <a href="InvoiceATM.html">Invoice ATM</a>
+            <a href="SaldoPlusMinus.html">Saldo Plus Minus</a>
+          </div>
+        </div>
+        <div class="nav-item dropdown">
+          Persewaan <span class="arrow">▾</span>
+        <div class="dropdown-sistem">
+            <a href="IdentitasPenyewa.html">Identitas Penyewaan</a>
+            <a href="PenetapanSewa.html">Penetapan Sewa</a>
+            <a href="PenetapanFasilitas.html">Penetapan Fasilitas Pend.</a>
+            <a href="Pelunasan.html">Pelunasan</a>
+            <a href="RegistrasiPengguna.html">Registrasi Pengguna</a>
+            <a href="InvoiceSewa.html">Invoice Sewa</a>
+            <a href="VerifikasiRegistrasiUser.html">Verifikasi Registrasi User</a>
+          </div>
+        </div>
+        <div class="nav-item dropdown">
+          Surat <span class="arrow">▾</span>
+        <div class="dropdown-sistem">
+            <a href="SuratPeringatan.html">Surat Peringatan (SP)</a>
+          </div>
+        </div>
+        <div class="nav-item dropdown">
+          Laporan <span class="arrow">▾</span>
+        <div class="dropdown-sistem">
+            <a href="Realisasi.html">Realisasi</a>
+            <a href="RekapRealisasi.html">Rekap Realisasi</a>
+            <a href="TargetPendapatan.html">Input Pendapatan Tahunan</a>
+            <a href="InputPendapatanBulanan.html">Input Pendapatan Bulanan</a>
+            <a href="CekLpPendapatan.html">Cetak Lp. Pendapatan</a>
+          </div>
+        </div>
+      <div class="nav-user" id="userMenu">
+        JSSAD8958 <span class="arrow">▾</span>
+        <div class="dropdown-menu" id="dropdownMenu">
+          <a href="#">Help</a>
+          <a href="#">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- KONTEN UTAMA -->
+<div class="main-content">
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama Penyewa</th>
+          <th>Nama Toko</th>
+          <th>Tanggal Pembayaran</th>
+          <th>Nominal</th>
+          <th>Keterangan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Supardi</td>
+          <td>Maju Jaya</td>
+          <td>01/01/2026</td>
+          <td class="nominal">Rp 6.000.000</td>
+          <td>
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Sulastri</td>
+          <td>Jaya Abadi</td>
+          <td>02/01/2026</td>
+          <td class="nominal">Rp 2.500.000</td>
+          <td>
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Sri Rahayu</td>
+          <td>Cahaya</td>
+          <td>03/01/2026</td>
+          <td class="nominal">Rp 5.000.000</td>
+          <td>
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Ahmad</td>
+          <td>Lancar Jaya</td>
+          <td>04/01/2026</td>
+          <td class="nominal">Rp 4.500.000</td>
+          <td>
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Dwi</td>
+          <td>Sumber</td>
+          <td>05/01/2026</td>
+          <td class="nominal">Rp 3.550.000</td>
+          <td>
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Dwi</td>
+          <td>Sumber</td>
+          <td>05/01/2026</td>
+          <td class="nominal">Rp 3.550.000</td>
+          <td>
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>Dwi</td>
+          <td>Sumber</td>
+          <td>05/01/2026</td>
+          <td class="nominal">Rp 3.550.000</td>
+          <td>
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Dwi</td>
+          <td>Sumber</td>
+          <td>05/01/2026</td>
+          <td class="nominal">Rp 3.550.000</td>
+          <td>
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>Dwi</td>
+          <td>Sumber</td>
+          <td>05/01/2026</td>
+          <td class="nominal">Rp 3.550.000</td>
+          <td>
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Dwi</td>
+          <td>Sumber</td>
+          <td>05/01/2026</td>
+          <td class="nominal">Rp 3.550.000</td>
+          <td>
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>Dwi</td>
+          <td>Sumber</td>
+          <td>05/01/2026</td>
+          <td class="nominal">Rp 3.550.000</td>
+          <td>
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>Dwi</td>
+          <td>Sumber</td>
+          <td>05/01/2026</td>
+          <td class="nominal">Rp 3.550.000</td>
+          <td>
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>Dwi</td>
+          <td>Sumber</td>
+          <td>05/01/2026</td>
+          <td class="nominal">Rp 3.550.000</td>
+          <td>
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>Dwi</td>
+          <td>Sumber</td>
+          <td>05/01/2026</td>
+          <td class="nominal">Rp 3.550.000</td>
+          <td>
+            <label class="checkbox-container">
+              <input type="checkbox" checked>
+              <span class="checkmark"></span>
+            </label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const userMenu = document.getElementById("userMenu");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+  
+    userMenu.addEventListener("click", function (e) {
+      e.stopPropagation();
+      dropdownMenu.classList.toggle("show");
+    });
+  
+    document.addEventListener("click", function () {
+      dropdownMenu.classList.remove("show");
+    });
+</script>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <span>2019. UPT Pusat Bisnis.</span>
+    <a href="#">Panduan Pengguna</a>
+  </div>
+
+</body>
+</html>

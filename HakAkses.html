@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIM UPT PUSAT BISNIS - Hak Akses</title>
+<link rel="stylesheet" href="HakAkses.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div class="header-logo"><img src="PB.png" alt="PB"></div>
+    <div class="header-title">SIM UPT PUSAT BISNIS Pemerintah Kota Yogyakarta</div>
+  </div>
+
+  <!-- NAVIGASI -->
+  <div class="nav">
+    <div class="nav-item active">
+      <a href="Dasboard.html">Home</a>
+    </div>
+    <div class="nav-item dropdown">
+      Sistem <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="User.html">User</a>
+        <a href="Group.html">Group</a>
+        <a href="Menu.html">Menu</a>
+        <a href="HakAkses.html">Hak Akses</a>
+        <a href="Password.html">Password</a>
+        <a href="Konfigurasi.html">Konfigurasi</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Master <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="Lahan.html">Lahan</a>
+        <a href="LahanPend.html">Lahan Fasilitas Pend.</a>
+        <a href="Biaya.html">Biaya Alat Listrik</a>
+        <a href="JenisLahan.html">Jenis Lahan</a>
+        <a href="JenisFasilitas.html">Jenis Fasilitas Pend.</a>
+        <a href="JenisDagangan.html">Jenis Dagangan</a>
+        <a href="JenisTarif.html">Jenis Tarif</a>
+        <a href="KelompokTarif.html">Kelompok Jenis Tarif</a>
+        <a href="UPT.html">UPT Pusat Bisnis</a>
+        <a href="ServiceCenter.html">Service center</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Tagihan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="TagihanMasal.html">Tagihan Masal</a>
+        <a href="PenguranganTarif.html">Pengurangan Tarif</a>
+        <a href="Invoice.html">Invoice</a>
+        <a href="InvoiceATM.html">Invoice ATM</a>
+        <a href="SaldoPlusMinus.html">Saldo Plus Minus</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Persewaan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="IdentitasPenyewaan.html">Identitas Penyewaan</a>
+        <a href="PenetapanSewa.html">Penetapan Sewa</a>
+        <a href="PenetapanFasilitas.html">Penetapan Fasilitas Pend.</a>
+        <a href="Pelunasan.html">Pelunasan</a>
+        <a href="RegistrasiPengguna.html">Registrasi Pengguna</a>
+        <a href="InvoiceSewa.html">Invoice Sewa</a>
+        <a href="VerifikasiRegistrasiUser.html">Verifikasi Registrasi User</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Surat <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="SuratPeringatan.html">Surat Peringatan (SP)</a>
+      </div>
+    </div>
+    <div class="nav-item dropdown">
+      Laporan <span class="arrow">▾</span>
+      <div class="dropdown-sistem">
+        <a href="Realisasi.html">Realisasi</a>
+        <a href="RekapRealisasi.html">Rekap Realisasi</a>
+        <a href="TargetPendapatan.html">Input Pendapatan Tahunan</a>
+        <a href="InputPendapatanBulanan.html">Input Pendapatan Bulanan</a>
+        <a href="LaporanTarget.html">Cetak Lp. Pendapatan</a>
+      </div>
+    </div>
+    <div class="nav-user" id="userMenu">
+      JSSAD8958 <span class="arrow">▾</span>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="#">Help</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="#">Hak Akses</a>
+  <span class="bc-sep">›</span>
+  <span class="bc-current">Pilih Group</span>
+</div>
+
+<!-- Content -->
+<div class="content">
+
+  <!-- Filter / Search Bar -->
+  <div class="filter-bar">
+    <div class="filter-fields">
+      <input type="text" id="inputNamaGroup" placeholder="Nama Group...">
+      <input type="text" id="inputKeterangan" placeholder="Keterangan...">
+      <div class="filter-buttons">
+        <button class="btn btn-cari" onclick="cariData()">Cari</button>
+        <button class="btn btn-simple" onclick="resetData()">Simple</button>
+      </div>
+    </div>
+
+    <div class="aksi-box">
+      <div class="aksi-title">Aksi</div>
+      <button class="btn btn-tambah-group" id="btnTambahGroup">Tambah Group</button>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="table-wrapper">
+    <table id="tableGroup">
+      <thead>
+        <tr>
+          <th>Aksi</th>
+          <th>No</th>
+          <th>Nama Group</th>
+          <th>Keterangan</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <tr>
+          <td class="td-aksi"><button class="btn-edit-row" title="Edit">&#9998;</button></td>
+          <td>1</td><td>Admin</td><td>Administrator</td>
+        </tr>
+        <tr>
+          <td class="td-aksi"><button class="btn-edit-row" title="Edit">&#9998;</button></td>
+          <td>2</td><td>Operator</td><td>Operator</td>
+        </tr>
+        <tr>
+          <td class="td-aksi"><button class="btn-edit-row" title="Edit">&#9998;</button></td>
+          <td>3</td><td>Umum</td><td>Umum</td>
+        </tr>
+        <tr>
+          <td class="td-aksi"><button class="btn-edit-row" title="Edit">&#9998;</button></td>
+          <td>4</td><td>Admin Online</td><td>Admin Online</td>
+        </tr>
+        <tr>
+          <td class="td-aksi"><button class="btn-edit-row" title="Edit">&#9998;</button></td>
+          <td>5</td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="td-aksi"><button class="btn-edit-row" title="Edit">&#9998;</button></td>
+          <td>6</td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="td-aksi"><button class="btn-edit-row" title="Edit">&#9998;</button></td>
+          <td>7</td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="td-aksi"><button class="btn-edit-row" title="Edit">&#9998;</button></td>
+          <td>8</td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="td-aksi"><button class="btn-edit-row" title="Edit">&#9998;</button></td>
+          <td>9</td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="td-aksi"><button class="btn-edit-row" title="Edit">&#9998;</button></td>
+          <td>10</td><td></td><td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>2019. UPT Pusat Bisnis.</span>
+  <a href="#">Panduan Pengguna</a>
+</div>
+
+<!-- POPUP TAMBAH GROUP -->
+<div class="popup-overlay" id="popupTambahGroup">
+  <div class="popup-box">
+    <div class="popup-title-bar">Tambah Group</div>
+    <div class="popup-inner">
+      <div class="popup-section-title">Data Group</div>
+      <div class="popup-form">
+        <div class="form-row">
+          <span class="form-label">Nama Group</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputNamaGroupPopup" placeholder="Nama Group...">
+        </div>
+        <div class="form-row">
+          <span class="form-label">Keterangan</span>
+          <span class="form-colon">:</span>
+          <input type="text" id="inputKeteranganPopup" placeholder="Keterangan...">
+        </div>
+      </div>
+    </div>
+    <div class="popup-footer">
+      <button class="btn-save" id="btnSaveGroup">
+        <span class="icon-save">✔</span> Save
+      </button>
+      <button class="btn-riset" id="btnRisetGroup">
+        <span class="icon-riset">✖</span> Riset
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // User dropdown menu
+  const userMenu = document.getElementById("userMenu");
+  const dropdownMenu = document.getElementById("dropdownMenu");
+  userMenu.addEventListener("click", function (e) {
+    e.stopPropagation();
+    dropdownMenu.classList.toggle("show");
+  });
+  document.addEventListener("click", function () {
+    dropdownMenu.classList.remove("show");
+  });
+
+  // Popup Tambah Group
+  const btnTambahGroup = document.getElementById("btnTambahGroup");
+  const popupTambahGroup = document.getElementById("popupTambahGroup");
+  const btnRisetGroup = document.getElementById("btnRisetGroup");
+  const btnSaveGroup = document.getElementById("btnSaveGroup");
+
+  btnTambahGroup.addEventListener("click", function () {
+    popupTambahGroup.classList.add("active");
+  });
+
+  popupTambahGroup.addEventListener("click", function (e) {
+    if (e.target === popupTambahGroup) {
+      popupTambahGroup.classList.remove("active");
+    }
+  });
+
+  btnRisetGroup.addEventListener("click", function () {
+    document.getElementById("inputNamaGroupPopup").value = "";
+    document.getElementById("inputKeteranganPopup").value = "";
+    popupTambahGroup.classList.remove("active");
+  });
+
+  btnSaveGroup.addEventListener("click", function () {
+    const namaGroup = document.getElementById("inputNamaGroupPopup").value.trim();
+    const keterangan = document.getElementById("inputKeteranganPopup").value.trim();
+    if (!namaGroup) {
+      alert("Nama Group wajib diisi!");
+      return;
+    }
+    alert(`Group "${namaGroup}" berhasil disimpan!`);
+    popupTambahGroup.classList.remove("active");
+  });
+
+  // Edit row button
+  document.querySelectorAll(".btn-edit-row").forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      const row = btn.closest("tr");
+      const namaGroup = row.cells[2].innerText;
+      if (namaGroup) {
+        alert("Edit group: " + namaGroup);
+      }
+    });
+  });
+
+  // Cari / filter function
+  function cariData() {
+    const keyword = document.getElementById("inputNamaGroup").value.toLowerCase();
+    const rows = document.querySelectorAll("#tableBody tr");
+    rows.forEach(function(row) {
+      const nama = row.cells[2].innerText.toLowerCase();
+      row.style.display = (!keyword || nama.includes(keyword)) ? "" : "none";
+    });
+  }
+
+  function resetData() {
+    document.getElementById("inputNamaGroup").value = "";
+    document.getElementById("inputKeterangan").value = "";
+    const rows = document.querySelectorAll("#tableBody tr");
+    rows.forEach(function(row) { row.style.display = ""; });
+  }
+</script>
+
+</body>
+</html>
